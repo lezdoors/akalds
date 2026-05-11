@@ -1,38 +1,136 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-display: "Inter Display", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --color-ink-900: #0a0a0a;
-  --color-ink-800: #171717;
-  --color-ink-700: #262626;
-  --color-ink-600: #404040;
-  --color-ink-500: #525252;
-  --color-ink-400: #737373;
-  --color-ink-300: #a3a3a3;
-  --color-ink-200: #d4d4d4;
-  --color-ink-100: #e5e5e5;
-  --color-ink-50: #f5f5f5;
-  --color-paper: #fafaf7;
-  --color-accent: #b8410f;
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 222 47% 31%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 222 47% 31%;
+    --radius: 0.75rem;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 222 47% 41%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 222 47% 41%;
+  }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   html {
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
+
   body {
-    background-color: var(--color-paper);
-    color: var(--color-ink-900);
+    @apply bg-background text-foreground;
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
   }
-  ::selection {
-    background: var(--color-ink-900);
-    color: var(--color-paper);
-  }
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Typography */
+.text-display {
+  @apply text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white;
+}
+
+.text-headline {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white;
+}
+
+.text-title {
+  @apply text-xl sm:text-2xl font-semibold tracking-tight text-white;
+}
+
+.text-body-large {
+  @apply text-lg text-white/60 leading-relaxed;
+}
+
+/* Premium card styles — glass */
+.card-premium {
+  @apply bg-white/5 backdrop-blur rounded-2xl border border-white/10 p-8;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  @apply -translate-y-1 border-white/20;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.02), 0 12px 48px rgba(255,255,255,0.04);
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+
+/* Section spacing */
+.section-padding {
+  @apply py-20 sm:py-24 lg:py-32;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold;
+  @apply hover:shadow-lg transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border-2 border-white/20 text-white px-8 py-3 rounded-xl font-semibold;
+  @apply hover:bg-white/10;
+  @apply transition-all duration-300;
+}
+
+/* Layout stability */
+.layout-stable {
+  contain: layout style;
 }
