@@ -50,10 +50,12 @@ export function LanguageProvider({
     loadTranslations(language);
   }, [language]);
 
-  // Translation function with parameter support
-  const t = (key: string, params?: Record<string, string | number>): string => {
+  // Translation function with parameter support.
+  // Returns string for string values, raw value (array/object) otherwise,
+  // and the key as fallback when missing.
+  const t = (key: string, params?: Record<string, string | number>): any => {
     const keys = key.split('.');
-    let value = translationData;
+    let value: any = translationData;
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
@@ -64,11 +66,19 @@ export function LanguageProvider({
         if (!isLoading) {
           console.warn(`Translation key not found: ${key}`);
         }
-        return key; // Return key as fallback
+        // Return safe fallback that won't crash array/object consumers
+        return Array.isArray(value) ? [] : key;
       }
     }
 
-    let result = typeof value === 'string' ? value : key;
+    // If the resolved value is not a string (array/object), return it directly.
+    // Consumers that need arrays (e.g. paragraphs.map) get the array; string
+    // consumers continue to receive strings as before.
+    if (typeof value !== 'string') {
+      return value;
+    }
+
+    let result = value;
 
     // Replace parameters in the translation
     if (params) {
