@@ -168,7 +168,11 @@ Deno.serve(async (req) => {
   });
 
   return new Response(
-    JSON.stringify({ ok: true, id: data.id, notified: 'ok' in notifyResult ? notifyResult.ok : false }),
+    JSON.stringify({
+      ok: true,
+      id: data.id,
+      notified: 'ok' in notifyResult ? notifyResult.ok : false,
+    }),
     { status: 200, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } }
   );
 });
