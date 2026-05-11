@@ -26,7 +26,7 @@ export function Hero() {
         <BlurFade delay={0.1} inView>
           <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/15 backdrop-blur mb-8">
             <span className="inline-flex items-center text-xs font-semibold text-black bg-white/90 rounded-full py-0.5 px-2.5">
-              Menana
+              Akal
             </span>
             <span className="text-sm font-medium text-white/90">
               {t('hero.badge')}

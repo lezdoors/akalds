@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { Theme, ThemeContextType } from '@/types';
 
-const THEME_STORAGE_KEY = 'menana-theme';
+const THEME_STORAGE_KEY = 'akal-theme';
 
 interface ThemeProviderProps {
   children: ReactNode;

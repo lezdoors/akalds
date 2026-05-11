@@ -69,7 +69,7 @@ const Confidentialite = () => {
           <section>
             <h2>Contact</h2>
             <p>
-              Pour toute demande relative à vos données personnelles, vous pouvez nous contacter à l'adresse suivante : <strong>contact@menana.net</strong>
+              Pour toute demande relative à vos données personnelles, vous pouvez nous contacter à l'adresse suivante : <strong>contact@akalds.com</strong>
             </p>
           </section>
 

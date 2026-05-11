@@ -7,10 +7,10 @@ const RGPD = () => {
           <section>
             <h2>Responsable du traitement</h2>
             <p>
-              <strong>Menana LTD</strong><br />
+              <strong>Akal Digital Services Ltd</strong><br />
               71-75 Shelton Street, Covent Garden<br />
               Londres, WC2H 9JQ, Royaume-Uni<br />
-              Email : contact@menana.net
+              Email : contact@akalds.com
             </p>
           </section>
 
@@ -65,7 +65,7 @@ const RGPD = () => {
           <section>
             <h2>Exercer vos droits</h2>
             <p>
-              Pour exercer l'un de ces droits, envoyez votre demande par email à <strong>contact@menana.net</strong> en précisant votre identité et le droit que vous souhaitez exercer. Nous nous engageons à répondre dans un délai de 30 jours.
+              Pour exercer l'un de ces droits, envoyez votre demande par email à <strong>contact@akalds.com</strong> en précisant votre identité et le droit que vous souhaitez exercer. Nous nous engageons à répondre dans un délai de 30 jours.
             </p>
           </section>
 

@@ -31,10 +31,18 @@ export function Footer() {
           {/* Column 1 - Company */}
           <div className="sm:col-span-2 lg:col-span-1">
             {/* Logo */}
-            <div className="mb-4">
-              <span className="text-2xl font-black tracking-tight text-white">
-                MENANA
-              </span>
+            <div className="mb-4 flex items-center gap-3">
+              <img
+                src="/brand/akal-logo-white.png"
+                alt=""
+                width="48"
+                height="48"
+                className="h-10 w-auto"
+              />
+              <div className="leading-tight">
+                <div className="text-xl font-bold tracking-tight text-white">AKAL</div>
+                <div className="text-[0.65rem] uppercase tracking-[0.2em] text-white/50">Digital Services</div>
+              </div>
             </div>
 
             <p className="text-white/50 text-sm leading-relaxed mb-5">
@@ -118,11 +126,11 @@ export function Footer() {
         <div className="container-custom py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-white/40">
             <a
-              href="mailto:contact@menana.net"
+              href="mailto:contact@akalds.com"
               className="inline-flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4 text-primary" />
-              contact@menana.net
+              contact@akalds.com
             </a>
             <span className="inline-flex items-center gap-2">
               <Clock className="w-4 h-4 text-primary" />

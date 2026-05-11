@@ -19,8 +19,8 @@ export function SEOHead({
   structuredData,
   noIndex = false
 }: SEOHeadProps) {
-  const fullTitle = title.includes('Menana') ? title : `${title} | Menana LTD`;
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://menana.net';
+  const fullTitle = title.includes('Akal') ? title : `${title} | Akal Digital Services Ltd`;
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.akalds.com';
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : undefined;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
@@ -37,22 +37,22 @@ export function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={fullOgImage} />
-      <meta property="og:image:alt" content={`${title} - Menana LTD`} />
+      <meta property="og:image:alt" content={`${title} - Akal Digital Services Ltd`} />
       <meta property="og:url" content={fullCanonical || siteUrl} />
-      <meta property="og:site_name" content="Menana LTD" />
+      <meta property="og:site_name" content="Akal Digital Services Ltd" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullOgImage} />
-      <meta name="twitter:creator" content="@MenanaLTD" />
+      <meta name="twitter:creator" content="@AkalDS" />
 
       {/* LinkedIn Optimization */}
-      <meta property="linkedin:owner" content="Menana LTD" />
+      <meta property="linkedin:owner" content="Akal Digital Services Ltd" />
 
       {/* Additional SEO Tags */}
-      <meta name="author" content="Menana LTD" />
+      <meta name="author" content="Akal Digital Services Ltd" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="theme-color" content="#4F46E5" />
 

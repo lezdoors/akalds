@@ -408,9 +408,16 @@ export const Header = memo(() => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div>
-              <Link to={homePath} className="flex items-center group" aria-label="Menana - Accueil">
-                <span className="text-2xl lg:text-3xl font-black tracking-tight text-white">
-                  MENANA
+              <Link to={homePath} className="flex items-center gap-2.5 group" aria-label="Akal Digital Services - Accueil">
+                <img
+                  src="/brand/akal-logo-white.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  className="h-8 lg:h-9 w-auto transition-opacity group-hover:opacity-90"
+                />
+                <span className="hidden sm:inline text-lg lg:text-xl font-bold tracking-tight text-white">
+                  AKAL
                 </span>
               </Link>
             </div>

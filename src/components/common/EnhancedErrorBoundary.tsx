@@ -111,8 +111,8 @@ export class ErrorBoundary extends Component<Props, State> {
               <div className="text-center pt-4 border-t">
                 <p className="text-sm text-muted-foreground">
                   Need immediate assistance? Contact us at{' '}
-                  <a href="mailto:contact@menana.net" className="text-primary hover:underline">
-                    contact@menana.net
+                  <a href="mailto:contact@akalds.com" className="text-primary hover:underline">
+                    contact@akalds.com
                   </a>
                 </p>
               </div>

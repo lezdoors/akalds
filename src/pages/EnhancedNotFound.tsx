@@ -11,7 +11,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Page Not Found - 404 Error"
-        description="Sorry, the page you're looking for doesn't exist. Return to Menana's homepage or explore our services."
+        description="Sorry, the page you're looking for doesn't exist. Return to Akal's homepage or explore our services."
         noIndex={true}
       />
 
@@ -119,7 +119,7 @@ export default function NotFound() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button variant="outline" size="sm" asChild>
-                    <a href="mailto:contact@menana.net">
+                    <a href="mailto:contact@akalds.com">
                       <Mail className="w-4 h-4 mr-2" />
                       Email
                     </a>

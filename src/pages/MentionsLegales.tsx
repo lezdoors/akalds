@@ -7,14 +7,14 @@ const MentionsLegales = () => {
           <section>
             <h2>Éditeur du site</h2>
             <p>
-              <strong>Menana LTD</strong><br />
+              <strong>Akal Digital Services Ltd</strong><br />
               Société enregistrée au Royaume-Uni<br />
               71-75 Shelton Street, Covent Garden<br />
               Londres, WC2H 9JQ, Royaume-Uni
             </p>
             <p>
-              Email : contact@menana.net<br />
-              Site web : www.menana.net
+              Email : contact@akalds.com<br />
+              Site web : www.akalds.com
             </p>
           </section>
 
@@ -31,21 +31,21 @@ const MentionsLegales = () => {
           <section>
             <h2>Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes) est la propriété exclusive de Menana LTD ou de ses partenaires et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation, même partielle, est interdite sans autorisation écrite préalable.
+              L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes) est la propriété exclusive de Akal Digital Services Ltd ou de ses partenaires et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation, même partielle, est interdite sans autorisation écrite préalable.
             </p>
           </section>
 
           <section>
             <h2>Responsabilité</h2>
             <p>
-              Menana LTD s'efforce d'assurer l'exactitude des informations publiées sur ce site. Toutefois, la société ne saurait être tenue responsable des erreurs, omissions ou résultats obtenus suite à l'utilisation de ces informations.
+              Akal Digital Services Ltd s'efforce d'assurer l'exactitude des informations publiées sur ce site. Toutefois, la société ne saurait être tenue responsable des erreurs, omissions ou résultats obtenus suite à l'utilisation de ces informations.
             </p>
           </section>
 
           <section>
             <h2>Partenariat</h2>
             <p>
-              Les services d'assurance sont proposés en partenariat avec <strong>Zenassur France</strong>, courtier en assurance inscrit à l'Orias. Menana LTD agit en qualité d'intermédiaire et n'est pas directement responsable des produits d'assurance souscrits.
+              Les services d'assurance sont proposés en partenariat avec <strong>Zenassur France</strong>, courtier en assurance inscrit à l'Orias. Akal Digital Services Ltd agit en qualité d'intermédiaire et n'est pas directement responsable des produits d'assurance souscrits.
             </p>
           </section>
 

@@ -14,7 +14,7 @@ export default {
   hero: {
     badge: 'Services professionnels',
     headline: 'Votre partenaire pour vos démarches administratives et d\'assurance',
-    description: 'Menana LTD accompagne les particuliers dans leurs démarches administratives et la souscription de produits d\'assurance avec nos partenaires agréés.',
+    description: 'Akal Digital Services Ltd accompagne les particuliers dans leurs démarches administratives et la souscription de produits d\'assurance avec nos partenaires agréés.',
     primaryCta: 'Demander une assistance',
     secondaryCta: 'Découvrir nos services',
     features: {
@@ -109,8 +109,8 @@ export default {
     secondaryCta: 'Demander un rappel',
   },
   about: {
-    title: 'À propos de Menana',
-    description: 'Menana LTD est une société britannique spécialisée dans l\'assistance administrative et le courtage en assurance, en partenariat avec Zenassur France.',
+    title: 'À propos de Akal',
+    description: 'Akal Digital Services Ltd est une société britannique spécialisée dans l\'assistance administrative et le courtage en assurance, en partenariat avec Zenassur France.',
     mission: {
       title: 'Notre mission',
       description: 'Simplifier les démarches administratives et l\'accès aux produits d\'assurance pour les particuliers francophones, avec un service professionnel et transparent.',
@@ -165,7 +165,7 @@ export default {
     },
     info: {
       email: 'Email',
-      emailAddress: 'contact@menana.net',
+      emailAddress: 'contact@akalds.com',
       hours: 'Horaires',
       businessHours: 'Lun-Ven 9h-18h (heure de Paris)',
       address: 'Adresse',
@@ -173,7 +173,7 @@ export default {
     },
   },
   footer: {
-    description: 'Menana LTD est une société britannique spécialisée dans l\'assistance administrative et le courtage en assurance, en partenariat avec Zenassur France.',
+    description: 'Akal Digital Services Ltd est une société britannique spécialisée dans l\'assistance administrative et le courtage en assurance, en partenariat avec Zenassur France.',
     links: {
       services: 'Nos Services',
       company: 'Entreprise',
@@ -183,13 +183,13 @@ export default {
       mentions: 'Mentions légales',
       privacy: 'Politique de confidentialité',
       rgpd: 'Protection des données (RGPD)',
-      copyright: '© {{year}} Menana LTD. Tous droits réservés. Société enregistrée au Royaume-Uni.',
+      copyright: '© {{year}} Akal Digital Services Ltd. Tous droits réservés. Société enregistrée au Royaume-Uni.',
     },
   },
   chat: {
-    title: 'Assistant Menana',
+    title: 'Assistant Akal',
     placeholder: 'Posez votre question...',
-    welcome: 'Bonjour ! Je suis l\'assistant Menana. Comment puis-je vous aider ?',
+    welcome: 'Bonjour ! Je suis l\'assistant Akal. Comment puis-je vous aider ?',
     thinking: 'En cours de réflexion...',
   },
   common: {
@@ -204,8 +204,8 @@ export default {
     optional: 'Optionnel',
   },
   seo: {
-    defaultTitle: 'Menana LTD — Services professionnels, assistance administrative et assurance',
-    defaultDescription: 'Menana LTD accompagne les particuliers dans leurs démarches administratives et la souscription de produits d\'assurance. Centre d\'appels, génération de leads.',
-    keywords: 'assistance administrative, assurance, centre d\'appels, démarches administratives, raccordement, Menana, Zenassur',
+    defaultTitle: 'Akal Digital Services Ltd — Services professionnels, assistance administrative et assurance',
+    defaultDescription: 'Akal Digital Services Ltd accompagne les particuliers dans leurs démarches administratives et la souscription de produits d\'assurance. Centre d\'appels, génération de leads.',
+    keywords: 'assistance administrative, assurance, centre d\'appels, démarches administratives, raccordement, Akal, Zenassur',
   },
 };
