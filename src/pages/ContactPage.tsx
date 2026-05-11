@@ -18,7 +18,8 @@ import {
 import { SEOHead } from '@/components/common/SEOHead';
 import { getPageSEO } from '@/utils/seo';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { supabase } from '@/lib/supabase';
+const SUBMIT_ENDPOINT = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-akal-contact`;
+const SUBMIT_APIKEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 const contactSchema = z.object({
   firstName: z.string().min(1),
@@ -70,15 +71,26 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const { error } = await supabase.from('akal_contacts').insert({
-        first_name: data.firstName,
-        last_name: data.lastName,
-        email: data.email,
-        phone: data.phone || null,
-        service: data.service,
-        message: data.message,
+      const res = await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'apikey': SUBMIT_APIKEY,
+          'Authorization': `Bearer ${SUBMIT_APIKEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone || null,
+          service: data.service,
+          message: data.message,
+        }),
       });
-      if (error) throw error;
+      if (!res.ok) {
+        const detail = await res.text();
+        throw new Error(`HTTP ${res.status}: ${detail}`);
+      }
       setIsSuccess(true);
       reset();
     } catch (err) {
