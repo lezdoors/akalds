@@ -70,7 +70,7 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const { error } = await supabase.from('menana_contacts').insert({
+      const { error } = await supabase.from('akal_contacts').insert({
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,

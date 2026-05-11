@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { PromptInput, PromptInputTextarea, PromptInputActions, PromptInputAction } from '@/components/ui/prompt-input';
 import { ChatMessage } from './ChatMessage';
 import { useTranslation } from '@/contexts/LanguageContext';
+import { CHAT_ENDPOINT } from '@/lib/supabase';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -14,8 +15,6 @@ interface Message {
 interface ChatPanelProps {
   onClose: () => void;
 }
-
-const CHAT_ENDPOINT = 'https://uhaaawuaqogjzzmzijji.supabase.co/functions/v1/menana-chat';
 
 export function ChatPanel({ onClose }: ChatPanelProps) {
   const { t } = useTranslation();
