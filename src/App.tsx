@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -11,11 +11,9 @@ import { Layout } from '@/components/layout/Layout';
 import { ErrorBoundary } from '@/components/common/EnhancedErrorBoundary';
 
 const Index = lazy(() => import('@/pages/Index'));
-const Services = lazy(() => import('@/pages/Services'));
-const ServiceAdministrative = lazy(() => import('@/pages/ServiceAdministrative'));
-const ServiceAssurance = lazy(() => import('@/pages/ServiceAssurance'));
-const ServiceCentreContact = lazy(() => import('@/pages/ServiceCentreContact'));
-const VenteDeLeads = lazy(() => import('@/pages/VenteDeLeads'));
+const Marketing = lazy(() => import('@/pages/Marketing'));
+const Payments = lazy(() => import('@/pages/Payments'));
+const Ventures = lazy(() => import('@/pages/Ventures'));
 const About = lazy(() => import('@/pages/About'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const MentionsLegales = lazy(() => import('@/pages/MentionsLegales'));
@@ -36,11 +34,9 @@ const queryClient = new QueryClient({
 const routeElements = (
   <>
     <Route index element={<Index />} />
-    <Route path="services" element={<Services />} />
-    <Route path="services/administrative" element={<ServiceAdministrative />} />
-    <Route path="services/assurance" element={<ServiceAssurance />} />
-    <Route path="services/centre-contact" element={<ServiceCentreContact />} />
-    <Route path="vente-de-leads" element={<VenteDeLeads />} />
+    <Route path="marketing" element={<Marketing />} />
+    <Route path="payments" element={<Payments />} />
+    <Route path="ventures" element={<Ventures />} />
     <Route path="about" element={<About />} />
     <Route path="contact" element={<ContactPage />} />
     <Route path="mentions-legales" element={<MentionsLegales />} />

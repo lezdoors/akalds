@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, memo } from 'react';
-import { Menu, ChevronDown, Globe, Sun, Moon, Monitor } from 'lucide-react';
+import { Menu, Globe, Sun, Moon, Monitor } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
@@ -21,16 +21,9 @@ import { cn } from '@/lib/utils';
 
 // Navigation items configuration
 const navigationItems = [
-  {
-    key: 'services',
-    path: 'services',
-    children: [
-      { key: 'administrative', path: 'services/administrative' },
-      { key: 'assurance', path: 'services/assurance' },
-      { key: 'centreContact', path: 'services/centre-contact' },
-    ],
-  },
-  { key: 'venteLeads', path: 'vente-de-leads' },
+  { key: 'marketing', path: 'marketing' },
+  { key: 'payments', path: 'payments' },
+  { key: 'ventures', path: 'ventures' },
   { key: 'about', path: 'about' },
   { key: 'contact', path: 'contact' },
 ];
@@ -191,48 +184,7 @@ const ThemeSelector = memo(() => {
 });
 
 // Services dropdown for desktop
-const ServicesDropdown = memo(({ isActive }: { isActive: boolean }) => {
-  const { t, getLocalizedPath } = useLanguage();
-  const navigate = useNavigate();
-
-  const children = navigationItems[0].children!;
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          className={cn(
-            "relative flex items-center gap-1 text-white/70 hover:text-white transition-all duration-300",
-            "font-medium tracking-tight",
-            isActive && "text-white font-semibold"
-          )}
-        >
-          {t('nav.services')}
-          <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-          <span
-            className={cn(
-              "absolute -bottom-1 left-1/2 h-0.5 bg-primary transform -translate-x-1/2",
-              isActive ? "w-full" : "w-0"
-            )}
-          />
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-56 bg-neutral-900/95 backdrop-blur-md border border-white/10">
-        {children.map((child) => (
-          <DropdownMenuItem
-            key={child.key}
-            onClick={() => navigate(getLocalizedPath(child.path))}
-            className="cursor-pointer transition-colors duration-200 text-white/80 hover:text-white"
-          >
-            {t(`nav.${child.key}`)}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-});
-
-// Navigation link component (for non-dropdown items)
+// Navigation link component
 const NavigationLink = memo(({
   item,
   isActive,
@@ -311,30 +263,7 @@ const MobileNavigation = memo(() => {
         </SheetHeader>
 
         <nav className="flex flex-col space-y-2 mt-8">
-          {/* Services group */}
-          <div className="space-y-1">
-            <span className="text-left text-lg font-medium py-3 px-4 text-white/40 block">
-              {t('nav.services')}
-            </span>
-            {navigationItems[0].children!.map((child) => (
-              <button
-                key={child.key}
-                onClick={() => handleNavigation(child.path)}
-                className={cn(
-                  "text-left text-base font-medium py-2.5 px-4 pl-8 rounded-lg transition-all duration-200 w-full",
-                  "text-white/70 hover:bg-white/5 hover:text-white",
-                  "focus:outline-none focus:ring-2 focus:ring-primary/20",
-                  "min-h-[44px] flex items-center",
-                  isActiveLink(child.path) && "bg-primary/15 text-white font-semibold"
-                )}
-              >
-                {t(`nav.${child.key}`)}
-              </button>
-            ))}
-          </div>
-
-          {/* Other nav items */}
-          {navigationItems.slice(1).map((item) => (
+          {navigationItems.map((item) => (
             <button
               key={item.key}
               onClick={() => handleNavigation(item.path)}
@@ -424,11 +353,7 @@ export const Header = memo(() => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8" role="navigation">
-              {/* Services dropdown */}
-              <ServicesDropdown isActive={isActiveLink('services')} />
-
-              {/* Other nav items */}
-              {navigationItems.slice(1).map((item) => (
+              {navigationItems.map((item) => (
                 <div key={item.key}>
                   <NavigationLink
                     item={item}

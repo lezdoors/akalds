@@ -6,10 +6,9 @@ export function Footer() {
   const { t, getLocalizedPath } = useLanguage();
 
   const serviceLinks = [
-    { label: t('nav.administrative'), path: 'services/administrative' },
-    { label: t('nav.assurance'), path: 'services/assurance' },
-    { label: t('nav.centreContact'), path: 'services/centre-contact' },
-    { label: t('nav.venteLeads'), path: 'vente-de-leads' },
+    { label: t('nav.marketing'), path: 'marketing' },
+    { label: t('nav.payments'), path: 'payments' },
+    { label: t('nav.ventures'), path: 'ventures' },
   ];
 
   const companyLinks = [
@@ -68,9 +67,9 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2 - Nos Services */}
+          {/* Column 2 - Capabilities */}
           <div>
-            <h4 className="font-semibold text-white mb-5">{t('footer.services')}</h4>
+            <h4 className="font-semibold text-white mb-5">{t('footer.capabilities')}</h4>
             <ul className="space-y-3">
               {serviceLinks.map((link) => (
                 <li key={link.path}>
@@ -126,15 +125,15 @@ export function Footer() {
         <div className="container-custom py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-white/40">
             <a
-              href="mailto:contact@akalds.com"
+              href={`mailto:${t('contact.info.emailAddress')}`}
               className="inline-flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4 text-primary" />
-              contact@akalds.com
+              {t('contact.info.emailAddress')}
             </a>
             <span className="inline-flex items-center gap-2">
               <Clock className="w-4 h-4 text-primary" />
-              Lun-Ven 9h-18h heure de Paris
+              {t('contact.info.businessHours')}
             </span>
           </div>
         </div>
@@ -144,7 +143,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-4 md:py-5">
           <p className="text-center text-white/30 text-xs md:text-sm">
-            {t('footer.legal.copyright', { year: new Date().getFullYear() })}
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

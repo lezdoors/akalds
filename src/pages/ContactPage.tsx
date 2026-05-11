@@ -33,10 +33,11 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const serviceKeys = [
-  'administrative',
-  'assurance',
-  'centreContact',
-  'leads',
+  'marketing',
+  'payments',
+  'ventures',
+  'partnership',
+  'press',
   'other',
 ] as const;
 

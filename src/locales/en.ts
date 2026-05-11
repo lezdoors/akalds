@@ -1,211 +1,245 @@
 export default {
   nav: {
     home: 'Home',
-    services: 'Our Services',
-    administrative: 'Administrative Assistance',
-    assurance: 'Insurance Assistance',
-    centreContact: 'Contact Centre',
-    venteLeads: 'Lead Sales',
+    marketing: 'Marketing',
+    payments: 'Payments',
+    ventures: 'Ventures',
     about: 'About',
     contact: 'Contact',
-    getStarted: 'Request assistance',
+    getStarted: 'Get in touch',
     language: 'Language',
   },
+
   hero: {
-    badge: 'Professional services',
-    headline: 'Your partner for administrative procedures and insurance',
-    description: 'Akal Digital Services Ltd supports individuals with their administrative procedures and insurance subscriptions through our approved partners.',
-    primaryCta: 'Request assistance',
-    secondaryCta: 'Discover our services',
-    features: {
-      professional: { title: 'Professional service', description: 'Personalised support' },
-      security: { title: 'Security and compliance', description: 'GDPR and UK regulations compliant' },
-      support: { title: 'Available support', description: 'Mon-Fri 9am-6pm (Paris time)' },
-    },
+    badge: 'A UK holding company',
+    headline: 'Building durable digital businesses.',
+    description:
+      'Akal Digital Services is a London-based holding company operating brands across marketing, payments, and consumer ventures. We own the infrastructure our businesses run on — and the operators who run it.',
+    primaryCta: 'What we do',
+    secondaryCta: 'Get in touch',
   },
-  services: {
-    title: 'Our services',
-    description: 'Comprehensive solutions for your administrative and insurance needs',
+
+  capabilities: {
+    eyebrow: 'Capabilities',
+    title: 'Three disciplines, run as one operation.',
+    description:
+      'Akal is structured as a small holding company. Each capability is a profit center, and each compounds the others.',
     items: {
-      administrative: {
-        title: 'Administrative Assistance',
-        shortDescription: 'Electricity connection, administrative forms, case tracking and personalised support for all your procedures.',
-        description: 'We handle all your administrative procedures, from building the file to its completion. Electricity connection, complex forms, follow-up with organisations — we manage everything for you.',
-        features: ['Electricity connection (Enedis, EDF)', 'Administrative forms and files', 'Ongoing case tracking', 'End-to-end personalised support'],
-        process: [
-          { step: 'Initial contact', description: 'Speak with an advisor to define your needs' },
-          { step: 'File analysis', description: 'We review your situation and the required documents' },
-          { step: 'Preparation and submission', description: 'We prepare and submit your complete file' },
-          { step: 'Follow-up to completion', description: 'We track your file until it is resolved' },
-        ],
-        faq: [
-          { question: 'What types of procedures do you handle?', answer: 'We manage electricity connections, administrative forms, and case tracking with all public and private organisations.' },
-          { question: 'How long does a procedure take?', answer: 'The timeline depends on the type of procedure. An electricity connection typically takes 2 to 6 weeks. We keep you informed at every step.' },
-          { question: 'How can I track my file progress?', answer: 'You receive regular updates by email and phone. You can also contact us at any time for a status update.' },
-        ],
+      marketing: {
+        eyebrow: '01',
+        title: 'Marketing',
+        shortDescription:
+          'Performance-led acquisition, paid search and social, conversion engineering, analytics — built for businesses that measure marketing in customers, not impressions.',
+        ctaLabel: 'Marketing capabilities',
       },
-      assurance: {
-        title: 'Insurance Assistance',
-        shortDescription: 'Insurance subscriptions (health, car, motorcycle, borrower) in partnership with Zenassur France, an approved broker.',
-        description: 'In partnership with Zenassur France, a broker registered with Orias, we offer the best insurance products suited to your situation. Comparison, advice and subscription — all in one.',
-        features: ['Health insurance', 'Car insurance', 'Motorcycle insurance', 'Borrower insurance'],
-        process: [
-          { step: 'Needs assessment', description: 'An advisor analyses your situation and priorities' },
-          { step: 'Offer comparison', description: 'We compare the best offers on the market for you' },
-          { step: 'Personalised recommendation', description: 'We present the most suitable solution' },
-          { step: 'Assisted subscription', description: 'We guide you through the subscription process' },
-        ],
-        faq: [
-          { question: 'Who is Zenassur France?', answer: 'Zenassur France is an approved insurance broker, registered with Orias. They allow us to offer quality insurance products in full compliance.' },
-          { question: 'Are the rates competitive?', answer: 'We compare offers from several insurers to find you the best value for money. Our rates are transparent, with no hidden fees.' },
-          { question: 'Can I cancel my current contract?', answer: 'Yes, we can help you cancel your current contract and subscribe to a more advantageous one.' },
-        ],
+      payments: {
+        eyebrow: '02',
+        title: 'Payments',
+        shortDescription:
+          'Merchant-of-record arrangements, Stripe Connect implementations, dispute resolution, treasury workflows. We operate the rails so our portfolio companies can focus on product.',
+        ctaLabel: 'Payments capabilities',
       },
-      centreContact: {
-        title: 'Contact Centre',
-        shortDescription: 'Dedicated phone support in France to answer your questions and finalise your requests with our advisors.',
-        description: 'Our call centre based in France provides you with a team of qualified advisors. Inbound calls, case tracking, follow-ups — we are your single point of contact.',
-        features: ['Inbound and outbound calls', 'Qualified advisors based in France', 'Personalised tracking of each request', 'Reporting and dashboards'],
-        process: [
-          { step: 'Inbound call', description: 'Our advisors answer your calls Monday to Friday' },
-          { step: 'Case intake', description: 'Your request is recorded and qualified immediately' },
-          { step: 'Processing', description: 'We process your request or forward it to the appropriate department' },
-          { step: 'Follow-up and closure', description: 'We ensure follow-up until complete resolution' },
-        ],
-        faq: [
-          { question: 'What are the call centre hours?', answer: 'Our contact centre is open Monday to Friday, 9am to 6pm (Paris time).' },
-          { question: 'Are the advisors based in France?', answer: 'Yes, all our advisors are based in France and are fluent in French.' },
-          { question: 'Can I request a callback?', answer: 'Absolutely. You can request a callback via our contact form or by email.' },
-        ],
+      ventures: {
+        eyebrow: '03',
+        title: 'Ventures',
+        shortDescription:
+          'A small portfolio of consumer and B2B brands operated under Akal — across atelier goods, energy services, and emerging digital products.',
+        ctaLabel: 'Portfolio',
       },
     },
   },
-  venteLeads: {
-    title: 'Lead Sales',
-    description: 'Qualified leads to grow your business',
-    intro: 'We generate and sell qualified leads across multiple sectors. Each lead is verified and delivered in real time to maximise your conversions.',
-    features: ['Qualified and verified leads', 'Real-time delivery', 'Sectors: energy, insurance, real estate', 'Volume tailored to your needs'],
-    cta: 'Contact us for a partnership',
+
+  approach: {
+    eyebrow: 'Approach',
+    title: 'Operators, not advisors.',
+    paragraphs: [
+      "We don't write strategy decks. We run businesses — owning the P&L, hiring the team, deploying the capital, and shipping the product.",
+      'Every brand under Akal shares the same infrastructure: payments stack, analytics pipeline, ad accounts, compliance posture. That shared spine is what allows new ventures to launch in weeks instead of quarters.',
+      'The model is simple. Find a category we understand, build the cleanest possible operation inside it, and reinvest cash flow into the next one.',
+    ],
   },
-  stats: {
-    dossiers: 'Files processed',
-    clients: 'Clients supported',
-    experience: 'Years of experience',
-    satisfaction: 'Satisfaction rate',
-  },
-  whyChooseUs: {
-    title: 'Why choose us',
-    description: 'A transparent and professional approach for all your needs',
-    items: {
-      transparency: { title: 'Transparency', description: 'Clear information about our services and pricing, with no hidden fees.' },
-      speed: { title: 'Fast processing', description: 'Efficient handling of your requests with personalised follow-up.' },
-      support: { title: 'Support in France', description: 'Team of advisors available by phone from France.' },
-    },
-  },
-  ctaBand: {
-    title: 'Ready to get started?',
-    description: 'Contact us today to benefit from our professional assistance.',
-    primaryCta: 'Contact us',
-    secondaryCta: 'Request a callback',
-  },
-  about: {
-    title: 'About Akal',
-    description: 'Akal Digital Services Ltd is a British company specialising in administrative assistance and insurance brokerage, in partnership with Zenassur France.',
-    mission: {
-      title: 'Our mission',
-      description: 'Simplifying administrative procedures and access to insurance products for French-speaking individuals, with professional and transparent service.',
-    },
-    values: {
-      title: 'Our values',
-      items: {
-        transparency: { title: 'Transparency', description: 'Clear and honest information at every step.' },
-        performance: { title: 'Performance', description: 'Measurable results and fast processing of your requests.' },
-        compliance: { title: 'Compliance', description: 'Strict adherence to GDPR and applicable regulations.' },
-        proximity: { title: 'Proximity', description: 'A team that listens, based in France, available by phone.' },
+
+  marketingPage: {
+    eyebrow: 'Marketing',
+    title: 'Performance marketing for businesses that measure outcomes, not impressions.',
+    intro:
+      "We don't sell impressions, awareness, or reach. We sell purchases, signups, and lifetime value. Every channel we touch carries a number attached to it.",
+    capabilities: [
+      {
+        title: 'Paid acquisition',
+        body: 'Google, Meta, TikTok, and emerging surfaces — managed with full-funnel measurement and weekly creative iteration.',
       },
-    },
-    company: {
-      registration: 'Company registered in the United Kingdom',
-      address: '71-75 Shelton Street, Covent Garden\nLondon, United Kingdom, WC2H 9JQ',
-      partner: 'Partner of Zenassur France — Broker registered with Orias',
-      rgpd: 'GDPR compliant',
-      stripe: 'Secure Stripe payments',
-    },
+      {
+        title: 'Conversion engineering',
+        body: 'Landing pages, checkout flows, and on-page experiments designed to lift conversion rate, not just A/B test it.',
+      },
+      {
+        title: 'Analytics + attribution',
+        body: 'Server-side GA4, enhanced conversions, and offline-conversion uploads so the data Google sees matches the customers you actually got.',
+      },
+      {
+        title: 'CRM + lifecycle',
+        body: 'Segmented email and SMS lifecycle programs that turn a single purchase into a relationship.',
+      },
+    ],
+    approach:
+      "Our marketing team operates as if it owned the business — because, in the brands we run, it does. We measure success in payback period and contribution margin, not vanity metrics.",
   },
+
+  paymentsPage: {
+    eyebrow: 'Payments',
+    title: 'Payment infrastructure for operators.',
+    intro:
+      'Payments are not a feature you bolt on. They are the foundation of how a digital business gets paid, refunds disputes, and survives chargebacks. We treat them accordingly.',
+    capabilities: [
+      {
+        title: 'Stripe Connect implementations',
+        body: 'Standard, Express, and Custom accounts; platform fees, payouts, and multi-party flows. Built to scale from one merchant to many.',
+      },
+      {
+        title: 'Risk + dispute operations',
+        body: 'Radar tuning, evidence submission workflows, chargeback monitoring, and merchant-account hygiene to protect long-term acceptance rates.',
+      },
+      {
+        title: 'Merchant-of-record arrangements',
+        body: 'When our brands need to launch quickly under an established payment entity, Akal operates as the merchant of record with full compliance and reconciliation.',
+      },
+      {
+        title: 'Treasury + reconciliation',
+        body: 'Daily payout reconciliation, multi-currency handling, and downstream feeds into the accounting and tax stack.',
+      },
+    ],
+    approach:
+      "We've operated payments through every stage — pre-revenue, growth-stage, and post-incident. The lessons learned are embedded in how we set up every new merchant we touch.",
+  },
+
+  venturesPage: {
+    eyebrow: 'Ventures',
+    title: 'A small portfolio of operating brands.',
+    intro:
+      "Akal operates and invests in a focused set of consumer and B2B brands. We don't run a fund or write checks — we build, buy, and operate.",
+    capabilities: [
+      {
+        title: 'Consumer goods',
+        body: 'Atelier and lifestyle brands sourced through long-standing supplier relationships and operated with direct-to-consumer rigor.',
+      },
+      {
+        title: 'Energy services',
+        body: 'Lead-generation and customer acquisition for connection, installation, and infrastructure services across Western Europe.',
+      },
+      {
+        title: 'Digital products',
+        body: 'Internal tools, CRM, and operations software built for our portfolio — selectively released to outside operators when the fit is right.',
+      },
+      {
+        title: 'Selective bets',
+        body: "We take very few new bets. When we do, it's because the operator, category, and timing all line up.",
+      },
+    ],
+    approach:
+      "Our brands stay independent in voice and customer experience but share Akal's operating spine: payments, analytics, compliance, and people. That is what makes the portfolio work.",
+  },
+
+  aboutPage: {
+    eyebrow: 'About',
+    title: 'A small UK holding company.',
+    intro:
+      'Akal Digital Services Ltd is a private limited company registered in England & Wales. We operate and invest in digital businesses — primarily in marketing, payments, and consumer ventures.',
+    sections: [
+      {
+        eyebrow: 'Operating thesis',
+        title: 'Compound the infrastructure.',
+        body: 'Most agencies sell hours. Most investors sell capital. We do neither. Akal owns the operating systems — payments, analytics, ad accounts, CRM, compliance — that every digital business needs, and uses them across a small portfolio of brands. Each new venture launches on the shared spine, which means lower friction, faster iteration, and a real margin advantage.',
+      },
+      {
+        eyebrow: 'How we work',
+        title: 'Operators first.',
+        body: 'Every brand under Akal is run by an operator — not a holding-company executive, not a board, not a consultant. We hire (or co-found with) people who want to run a single business well, and we give them the infrastructure to do it without distraction.',
+      },
+      {
+        eyebrow: 'Jurisdiction',
+        title: 'Registered in the United Kingdom.',
+        body: 'Akal Digital Services Ltd is registered with Companies House under English law. Statutory accounts, beneficial ownership, and tax filings are maintained in the UK. Our operating businesses serve customers in multiple European markets.',
+      },
+    ],
+  },
+
   contact: {
-    title: 'Contact us',
-    description: 'Our team is at your disposal to answer all your questions.',
+    title: "Let's talk",
+    subtitle:
+      'Press, partnerships, and operating opportunities. We read everything and reply to what we can move forward.',
+    description:
+      'Press, partnerships, and operating opportunities. We read everything and reply to what we can move forward.',
+    info: {
+      email: 'Email',
+      emailAddress: 'hello@akalds.com',
+      operations: 'Operations',
+      operationsAddress: 'contact@akalds.com',
+      hours: 'Hours',
+      businessHours: 'Mon–Fri, business hours UK',
+      address: 'Registered office',
+      fullAddress: 'London, United Kingdom',
+    },
     form: {
       title: 'Send us a message',
       firstName: 'First name',
       lastName: 'Last name',
-      email: 'Email address',
-      phone: 'Phone',
-      service: 'Desired service',
-      message: 'Your message',
-      send: 'Send message',
-      sending: 'Sending...',
-      placeholder: {
-        firstName: 'John',
-        lastName: 'Smith',
-        email: 'john@example.com',
-        phone: '+44 7123 456 789',
-        message: 'Describe your needs...',
-      },
-      serviceOptions: {
-        administrative: 'Administrative Assistance',
-        assurance: 'Insurance Assistance',
-        centreContact: 'Contact Centre',
-        leads: 'Lead Sales',
-        other: 'Other request',
-      },
-      privacy: 'By submitting this form, you agree to our privacy policy.',
-      success: 'Message sent successfully!',
-      successDescription: 'We will get back to you within 24 hours.',
-    },
-    info: {
       email: 'Email',
-      emailAddress: 'contact@akalds.com',
-      hours: 'Hours',
-      businessHours: 'Mon-Fri 9am-6pm (Paris time)',
-      address: 'Address',
-      fullAddress: '71-75 Shelton Street, Covent Garden\nLondon, United Kingdom, WC2H 9JQ',
+      phone: 'Phone (optional)',
+      service: 'What is this about',
+      serviceOptions: {
+        marketing: 'Marketing',
+        payments: 'Payments',
+        ventures: 'Ventures',
+        partnership: 'Partnership',
+        press: 'Press',
+        other: 'Other',
+      },
+      message: 'Message',
+      placeholder: {
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'you@company.com',
+        phone: '+44 20 1234 5678',
+        message: 'Tell us a few sentences about what you have in mind.',
+      },
+      send: 'Send message',
+      sending: 'Sending…',
+      submit: 'Send message',
+      submitting: 'Sending…',
+      success: "Thanks — we'll be in touch.",
+      successDescription: "Your message landed with us. We'll reply from hello@akalds.com.",
+      privacy: 'By sending, you agree we can store your message and reply from hello@akalds.com.',
     },
   },
+
   footer: {
-    description: 'Akal Digital Services Ltd is a British company specialising in administrative assistance and insurance brokerage, in partnership with Zenassur France.',
-    links: {
-      services: 'Our Services',
-      company: 'Company',
-      legal: 'Legal information',
-    },
+    description:
+      'Akal Digital Services Ltd is a UK holding company operating brands across marketing, payments, and consumer ventures.',
+    capabilities: 'Capabilities',
+    company: 'Company',
     legal: {
+      title: 'Legal',
       mentions: 'Legal notice',
-      privacy: 'Privacy policy',
-      rgpd: 'Data protection (GDPR)',
-      copyright: '© {{year}} Akal Digital Services Ltd. All rights reserved. Company registered in the United Kingdom.',
+      privacy: 'Privacy',
+      data: 'Data & GDPR',
     },
+    copyright:
+      '© {{year}} Akal Digital Services Ltd. Registered in England & Wales.',
   },
+
   chat: {
     title: 'Akal Assistant',
-    placeholder: 'Ask your question...',
-    welcome: 'Hello! I am the Akal assistant. How can I help you?',
-    thinking: 'Thinking...',
+    placeholder: 'Ask a question…',
+    welcome: 'Hi — happy to help with anything about Akal. What can I clarify?',
+    error: 'Something went wrong. Please try again or email hello@akalds.com.',
   },
-  common: {
-    loading: 'Loading...',
-    error: 'Something went wrong',
-    retry: 'Try again',
-    learnMore: 'Learn more',
-    getStarted: 'Get started',
-    backToHome: 'Back to home',
-    pageNotFound: 'Page not found',
-    required: 'Required',
-    optional: 'Optional',
-  },
+
   seo: {
-    defaultTitle: 'Akal Digital Services Ltd — Professional services, administrative assistance and insurance',
-    defaultDescription: 'Akal Digital Services Ltd supports individuals with their administrative procedures and insurance subscriptions. Call centre, lead generation.',
-    keywords: 'administrative assistance, insurance, call centre, administrative procedures, electricity connection, Akal, Zenassur',
+    defaultTitle: 'Akal Digital Services — A UK holding company',
+    defaultDescription:
+      'A London-based holding company operating brands across marketing, payments, and consumer ventures.',
+    keywords:
+      'Akal Digital Services, UK holding company, performance marketing, Stripe Connect, payments infrastructure, consumer ventures',
   },
 };

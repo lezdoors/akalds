@@ -1,7 +1,6 @@
 import { Hero } from '@/components/sections/Hero';
-import { Services } from '@/components/sections/Services';
-import { Stats } from '@/components/sections/Stats';
-import { WhyChooseUs } from '@/components/sections/WhyChooseUs';
+import { Capabilities } from '@/components/sections/Capabilities';
+import { Approach } from '@/components/sections/Approach';
 import { CTABand } from '@/components/sections/CTABand';
 import { SEOHead } from '@/components/common/SEOHead';
 import { getPageSEO } from '@/utils/seo';
@@ -19,9 +18,8 @@ const Index = () => {
       />
       <main>
         <Hero />
-        <Services />
-        <Stats />
-        <WhyChooseUs />
+        <Capabilities />
+        <Approach />
         <CTABand />
       </main>
     </>
