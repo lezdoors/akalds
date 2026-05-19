@@ -41,12 +41,6 @@ export function Hero() {
 
         {/* Center hero block */}
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <BlurFade delay={0.25} inView>
-            <p className="mb-6 text-xs md:text-sm font-medium uppercase tracking-[0.18em] text-white/80">
-              {t('hero.eyebrow')}
-            </p>
-          </BlurFade>
-
           <BlurFade delay={0.4} inView>
             <h1
               className="font-medium tracking-tighter text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
