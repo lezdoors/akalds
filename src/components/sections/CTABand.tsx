@@ -9,7 +9,7 @@ export function CTABand() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-black border-t border-white/5 py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-stone-900 border-t border-stone-800 py-24 lg:py-32 overflow-hidden text-white">
       <div className="container-custom relative z-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-end">
           <div className="lg:col-span-8">

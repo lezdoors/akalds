@@ -21,7 +21,7 @@ export default function About() {
         canonical="https://www.akalds.com/about"
       />
 
-      <main className="bg-black">
+      <main className="bg-black text-white">
         <section className="pt-32 pb-20 md:pt-40 md:pb-28">
           <div className="container-custom">
             <div className="max-w-4xl">

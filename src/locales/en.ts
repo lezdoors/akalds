@@ -49,6 +49,50 @@ export default {
     },
   },
 
+  portfolio: {
+    eyebrow: 'What we operate',
+    title: 'A focused portfolio across three sectors.',
+    description:
+      'Each line below is an active operating area for Akal. We own infrastructure across all three and deploy it under the brands we run.',
+    items: {
+      consumer: {
+        eyebrow: 'Sector 01',
+        title: 'Consumer goods',
+        body: 'Atelier and lifestyle brands sourced through long-standing supplier relationships, sold direct-to-consumer in EU markets.',
+      },
+      energy: {
+        eyebrow: 'Sector 02',
+        title: 'Energy services',
+        body: 'Lead generation and customer acquisition for connection, installation, and infrastructure services across Western Europe.',
+      },
+      digital: {
+        eyebrow: 'Sector 03',
+        title: 'Digital products',
+        body: 'Internal CRM, payments tooling, and operations software built for the portfolio — released selectively to outside operators.',
+      },
+    },
+  },
+
+  credibility: {
+    eyebrow: 'On the public record',
+    title: 'A real, registered UK company.',
+    description:
+      "Akal Digital Services Ltd is on the Companies House public register. Every number on the right is independently verifiable through the UK government's official register.",
+    stats: {
+      companyNumber: 'Companies House No.',
+      incorporated: 'Incorporated',
+      registeredOffice: 'Registered office',
+      sector: 'Standard industry classification',
+    },
+  },
+
+  videoBand: {
+    eyebrow: 'In motion',
+    title: 'How the operation feels from the inside.',
+    description:
+      'A short look at the brands, surfaces, and craft we operate day to day across the portfolio.',
+  },
+
   approach: {
     eyebrow: 'Approach',
     title: 'Operators, not advisors.',

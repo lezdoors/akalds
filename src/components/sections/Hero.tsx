@@ -12,7 +12,7 @@ export function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center -mt-16 lg:-mt-20">
+    <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center -mt-16 lg:-mt-20 text-white">
       <img src={HERO_BG} alt="" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/70" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black" />

@@ -108,7 +108,7 @@ export default function ContactPage() {
         structuredData={seoConfig.structuredData}
       />
 
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-black text-white">
         {/* Hero */}
         <section className="section-padding pt-32 pb-20">
           <div className="container-custom">

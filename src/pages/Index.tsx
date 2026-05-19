@@ -1,5 +1,8 @@
 import { Hero } from '@/components/sections/Hero';
+import { PortfolioStrip } from '@/components/sections/PortfolioStrip';
 import { Capabilities } from '@/components/sections/Capabilities';
+import { CredibilityBand } from '@/components/sections/CredibilityBand';
+import { VideoBand } from '@/components/sections/VideoBand';
 import { Approach } from '@/components/sections/Approach';
 import { CTABand } from '@/components/sections/CTABand';
 import { SEOHead } from '@/components/common/SEOHead';
@@ -18,7 +21,10 @@ const Index = () => {
       />
       <main>
         <Hero />
+        <PortfolioStrip />
         <Capabilities />
+        <CredibilityBand />
+        <VideoBand />
         <Approach />
         <CTABand />
       </main>

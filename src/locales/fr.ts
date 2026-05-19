@@ -49,6 +49,50 @@ export default {
     },
   },
 
+  portfolio: {
+    eyebrow: 'Ce que nous opérons',
+    title: 'Un portefeuille concentré sur trois secteurs.',
+    description:
+      'Chaque ligne ci-dessous est un secteur opérationnel actif d\'Akal. Nous possédons l\'infrastructure sur les trois et la déployons sous les marques que nous opérons.',
+    items: {
+      consumer: {
+        eyebrow: 'Secteur 01',
+        title: 'Biens de consommation',
+        body: 'Marques d\'atelier et de lifestyle sourcées via des relations fournisseurs de long terme, vendues en direct-to-consumer sur les marchés européens.',
+      },
+      energy: {
+        eyebrow: 'Secteur 02',
+        title: 'Services énergie',
+        body: 'Génération de leads et acquisition pour les services de raccordement, installation et infrastructure en Europe de l\'Ouest.',
+      },
+      digital: {
+        eyebrow: 'Secteur 03',
+        title: 'Produits numériques',
+        body: 'CRM interne, outils paiements et logiciels d\'opérations construits pour le portefeuille — ouverts sélectivement à des opérateurs externes.',
+      },
+    },
+  },
+
+  credibility: {
+    eyebrow: 'Sur le registre public',
+    title: 'Une vraie société britannique enregistrée.',
+    description:
+      'Akal Digital Services Ltd figure au registre public de Companies House. Chaque chiffre à droite est vérifiable indépendamment via le registre officiel du gouvernement britannique.',
+    stats: {
+      companyNumber: 'N° Companies House',
+      incorporated: 'Constituée le',
+      registeredOffice: 'Siège social',
+      sector: 'Classification sectorielle (SIC)',
+    },
+  },
+
+  videoBand: {
+    eyebrow: 'En mouvement',
+    title: 'À quoi ressemble l\'opération de l\'intérieur.',
+    description:
+      'Un aperçu des marques, des surfaces et de l\'artisanat que nous opérons au quotidien sur le portefeuille.',
+  },
+
   approach: {
     eyebrow: 'Approche',
     title: 'Opérateurs, pas conseillers.',
