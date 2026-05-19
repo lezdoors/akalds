@@ -28,18 +28,16 @@ export function VideoBand() {
         </div>
 
         <BlurFade delay={0.25} inView>
-          <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-stone-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)]">
-            <video
-              className="block w-full h-auto"
-              src="/media/akal-loop.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-hidden="true"
-            />
-          </div>
+          <video
+            className="block w-full h-auto"
+            src="/media/akal-loop.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          />
         </BlurFade>
       </div>
     </section>
