@@ -23,11 +23,7 @@ const CAPABILITY_ITEMS: Item[] = [
   {
     key: 'payments',
     path: '/payments',
-    art: {
-      kind: 'gradient',
-      bg:
-        'radial-gradient(120% 90% at 70% 30%, #5fd2e4 0%, #186b8a 50%, #000 100%), linear-gradient(135deg, #186b8a, #000)',
-    },
+    art: { kind: 'image', src: '/brand/capabilities/payments.jpg' },
   },
   {
     key: 'ventures',
