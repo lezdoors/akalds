@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Clock, MapPin, CheckCircle } from 'lucide-react';
+import { Mail, Clock, MapPin, Phone, CheckCircle } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -43,6 +43,7 @@ const serviceKeys = [
 
 const contactInfoConfig = [
   { key: 'email', labelKey: 'contact.info.email', valueKey: 'contact.info.emailAddress', icon: Mail },
+  { key: 'phone', labelKey: 'contact.info.phone', valueKey: 'contact.info.phoneNumber', icon: Phone },
   { key: 'hours', labelKey: 'contact.info.hours', valueKey: 'contact.info.businessHours', icon: Clock },
   { key: 'address', labelKey: 'contact.info.address', valueKey: 'contact.info.fullAddress', icon: MapPin },
 ] as const;

@@ -16,6 +16,7 @@ export const generateOrganizationSchema = () => ({
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'contact@akalds.com',
+    telephone: '+44-7828-726017',
     contactType: 'Customer Service',
     availableLanguage: ['French', 'English'],
   },

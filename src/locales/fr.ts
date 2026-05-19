@@ -227,6 +227,8 @@ export default {
       emailAddress: 'hello@akalds.com',
       operations: 'Opérations',
       operationsAddress: 'contact@akalds.com',
+      phone: 'Téléphone',
+      phoneNumber: '+44 7828 726017',
       hours: 'Horaires',
       businessHours: 'Lun–Ven 09:00–18:00 GMT',
       address: 'Siège social',
