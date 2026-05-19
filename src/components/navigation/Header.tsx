@@ -393,9 +393,6 @@ export const Header = memo(() => {
           </div>
         </div>
       </header>
-
-      {/* Spacer to prevent content jump */}
-      <div className="h-16 lg:h-20" aria-hidden="true" />
     </>
   );
 });

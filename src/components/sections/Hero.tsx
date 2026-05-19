@@ -10,7 +10,7 @@ export function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black text-white -mt-16 lg:-mt-20">
+    <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black text-white">
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
