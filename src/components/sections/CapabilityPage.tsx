@@ -162,7 +162,7 @@ export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
               </div>
               <button
                 onClick={() => navigate(getLocalizedPath('contact'))}
-                className="group inline-flex items-center gap-2 rounded-full bg-white text-ink-900 px-7 py-3.5 text-sm font-semibold hover:bg-white/90 transition-all flex-shrink-0"
+                className="group inline-flex items-center gap-2 rounded-full bg-white text-stone-900 px-7 py-3.5 text-sm font-semibold hover:bg-white/90 transition-all flex-shrink-0"
               >
                 {t('hero.secondaryCta')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
