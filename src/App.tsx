@@ -58,7 +58,7 @@ const AppRoutes = () => (
 );
 
 const App = () => (
-  <ErrorBoundary showDetails={process.env.NODE_ENV === 'development'}>
+  <ErrorBoundary showDetails>
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="system">
         <TooltipProvider>
