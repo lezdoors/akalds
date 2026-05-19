@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ShinyTextProps = {
@@ -19,24 +18,14 @@ export function ShinyText({
   className,
 }: ShinyTextProps) {
   return (
-    <motion.span
-      className={cn('inline-block bg-clip-text text-transparent', className)}
+    <span
+      className={cn('shiny-text-animated inline-block', className)}
       style={{
         backgroundImage: `linear-gradient(${spread}deg, ${baseColor} 0%, ${shineColor} 50%, ${baseColor} 100%)`,
-        backgroundSize: '200% 100%',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-      }}
-      animate={{
-        backgroundPosition: ['200% 0%', '-200% 0%'],
-      }}
-      transition={{
-        duration: speed,
-        repeat: Infinity,
-        ease: 'linear',
+        ['--shiny-speed' as string]: `${speed}s`,
       }}
     >
       {children}
-    </motion.span>
+    </span>
   );
 }

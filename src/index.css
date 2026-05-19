@@ -135,3 +135,20 @@
 .layout-stable {
   contain: layout style;
 }
+
+/* ShinyText animated gradient sweep */
+@keyframes shiny-text-sweep {
+  from {
+    background-position: 200% 0%;
+  }
+  to {
+    background-position: -200% 0%;
+  }
+}
+.shiny-text-animated {
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shiny-text-sweep var(--shiny-speed, 3s) linear infinite;
+}
