@@ -12,7 +12,7 @@ export function PortfolioStrip() {
   const { t } = useTranslation();
 
   return (
-    <section className="border-t border-stone-200 bg-stone-50 py-20 lg:py-24 text-stone-900">
+    <section className="border-t border-stone-200 bg-[#faf7f2] py-20 lg:py-24 text-stone-900">
       <div className="container-custom">
         <div className="flex flex-col gap-10 lg:gap-12">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
@@ -38,7 +38,7 @@ export function PortfolioStrip() {
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-stone-200 bg-stone-200 md:grid-cols-3">
             {ITEMS.map((item, idx) => (
               <BlurFade key={item.key} delay={0.15 + idx * 0.1} inView>
-                <div className="group flex h-full flex-col gap-4 bg-white p-8 md:p-10 transition-colors hover:bg-stone-50">
+                <div className="group flex h-full flex-col gap-4 bg-white p-8 md:p-10 transition-colors hover:bg-[#faf7f2]">
                   <item.Icon
                     className="h-7 w-7 text-stone-900"
                     strokeWidth={1.4}
