@@ -7,6 +7,12 @@ type CapabilityKey = 'marketingPage' | 'paymentsPage' | 'venturesPage';
 
 type Capability = { title: string; body: string; href?: string };
 
+const HERO_ART: Record<CapabilityKey, string> = {
+  marketingPage: '/brand/capabilities/marketing.jpg',
+  paymentsPage: '/brand/capabilities/payments.jpg',
+  venturesPage: '/brand/capabilities/ventures.jpg',
+};
+
 export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLanguage();
@@ -19,24 +25,41 @@ export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
   const capabilities: Capability[] = Array.isArray(rawCapabilities) ? rawCapabilities : [];
   const approach = t(`${localeKey}.approach`);
 
+  const heroArt = HERO_ART[localeKey];
+
   return (
     <main className="bg-black text-white">
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-custom">
-          <div className="max-w-4xl">
-            <BlurFade delay={0} inView>
-              <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
-                {eyebrow}
-              </p>
-            </BlurFade>
-            <BlurFade delay={0.1} inView>
-              <h1 className="text-display max-w-3xl">{title}</h1>
-            </BlurFade>
-            <BlurFade delay={0.25} inView>
-              <p className="mt-8 max-w-2xl text-lg md:text-xl text-white/70 leading-relaxed">
-                {intro}
-              </p>
-            </BlurFade>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-center">
+            <div className="lg:col-span-7">
+              <BlurFade delay={0} inView>
+                <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+                  {eyebrow}
+                </p>
+              </BlurFade>
+              <BlurFade delay={0.1} inView>
+                <h1 className="text-display">{title}</h1>
+              </BlurFade>
+              <BlurFade delay={0.25} inView>
+                <p className="mt-8 max-w-xl text-lg md:text-xl text-white/70 leading-relaxed">
+                  {intro}
+                </p>
+              </BlurFade>
+            </div>
+            <div className="lg:col-span-5">
+              <BlurFade delay={0.35} inView>
+                <img
+                  src={heroArt}
+                  alt=""
+                  width={1600}
+                  height={900}
+                  loading="eager"
+                  decoding="async"
+                  className="w-full aspect-video object-cover bg-black"
+                />
+              </BlurFade>
+            </div>
           </div>
         </div>
       </section>

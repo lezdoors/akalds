@@ -8,9 +8,8 @@ const MentionsLegales = () => {
             <h2>Éditeur du site</h2>
             <p>
               <strong>Akal Digital Services Ltd</strong><br />
-              Private limited company incorporée en Angleterre et au Pays de Galles<br />
-              Companies House n° 17229387 — constituée le 19 mai 2026<br />
-              Code SIC : 62090 (Other information technology service activities)
+              Private limited company enregistrée en Angleterre et au Pays de Galles<br />
+              Companies House n° 17229387
             </p>
             <p>
               <strong>Siège social</strong><br />
@@ -18,7 +17,6 @@ const MentionsLegales = () => {
               Londres WC2H 9JQ, Royaume-Uni
             </p>
             <p>
-              <strong>Directeur</strong> : M. Naoufal Haddaoui<br />
               Email : contact@akalds.com<br />
               Site web : www.akalds.com
             </p>

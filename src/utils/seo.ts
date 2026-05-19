@@ -13,7 +13,6 @@ export const generateOrganizationSchema = () => ({
     propertyID: 'Companies House',
     value: '17229387',
   },
-  foundingDate: '2026-05-19',
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'contact@akalds.com',
