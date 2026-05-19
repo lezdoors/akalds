@@ -76,16 +76,6 @@ export function Hero() {
           </BlurFade>
         </div>
 
-        {/* Bottom trust strip */}
-        <BlurFade delay={0.8} inView>
-          <div className="mt-6 lg:mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-white/55 text-[0.7rem] md:text-xs font-medium uppercase tracking-[0.18em]">
-            <span>England &amp; Wales</span>
-            <span aria-hidden className="text-white/25">·</span>
-            <span>Companies House No.&nbsp;17229387</span>
-            <span aria-hidden className="text-white/25">·</span>
-            <span>Covent Garden, London</span>
-          </div>
-        </BlurFade>
       </div>
     </section>
   );

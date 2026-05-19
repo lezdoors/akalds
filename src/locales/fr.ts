@@ -12,7 +12,7 @@ export default {
 
   hero: {
     badge: 'Une holding britannique',
-    eyebrow: 'Holding britannique · Constituée le 19 mai 2026',
+    eyebrow: 'Une holding britannique',
     headline: 'Construire des activités numériques durables.',
     headlineLine1: 'Activités numériques',
     headlineLine2: 'durables.',
@@ -208,7 +208,7 @@ export default {
       {
         eyebrow: 'Juridiction',
         title: 'Enregistrée au Royaume-Uni.',
-        body: 'Akal Digital Services Ltd est une société à responsabilité limitée (private limited company) constituée en Angleterre et au Pays de Galles le 19 mai 2026 — Companies House n° 17229387. Le siège social est situé au 71-75 Shelton Street, Covent Garden, Londres WC2H 9JQ. Comptes annuels, bénéficiaires effectifs et déclarations fiscales sont tenus au Royaume-Uni. Nos activités opérationnelles servent des clients sur plusieurs marchés européens.',
+        body: 'Akal Digital Services Ltd est une société à responsabilité limitée (private limited company) enregistrée en Angleterre et au Pays de Galles, basée à Covent Garden, Londres. Comptes annuels, bénéficiaires effectifs et déclarations fiscales sont tenus au Royaume-Uni. Nos activités opérationnelles servent des clients sur plusieurs marchés européens.',
       },
     ],
   },

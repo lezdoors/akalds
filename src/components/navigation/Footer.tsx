@@ -48,14 +48,11 @@ export function Footer() {
               {t('footer.description')}
             </p>
 
-            {/* Address + company no. */}
-            <div className="flex items-start gap-2.5 text-white/40 text-sm mb-3">
+            {/* Address (legal requirement: a UK Ltd must publish its registered office) */}
+            <div className="flex items-start gap-2.5 text-white/40 text-sm mb-5">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
               <span>71-75 Shelton Street, Covent Garden, London WC2H 9JQ</span>
             </div>
-            <p className="text-white/35 text-xs mb-5">
-              Companies House No.&nbsp;17229387 · Incorporated 19 May 2026
-            </p>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-3">
