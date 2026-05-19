@@ -16,7 +16,7 @@ export function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="border-t border-stone-200 bg-[#faf7f2] py-24 lg:py-32 text-stone-900"
+      className="border-t border-stone-200 bg-[#f5f4ed] py-24 lg:py-32 text-stone-900"
     >
       <div className="container-custom">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
@@ -49,7 +49,7 @@ export function Capabilities() {
                   <BlurFade key={item.key} delay={0.1 + idx * 0.1} inView>
                     <Link
                       to={getLocalizedPath(item.path)}
-                      className="group grid grid-cols-[3rem_1fr] gap-x-6 border-b border-stone-200 p-7 last:border-b-0 transition-colors hover:bg-[#faf7f2] md:grid-cols-[4rem_1fr] md:p-9"
+                      className="group grid grid-cols-[3rem_1fr] gap-x-6 border-b border-stone-200 p-7 last:border-b-0 transition-colors hover:bg-[#f5f4ed] md:grid-cols-[4rem_1fr] md:p-9"
                     >
                       <span className="font-mono text-xs text-stone-400 md:pt-2">
                         {eyebrow}

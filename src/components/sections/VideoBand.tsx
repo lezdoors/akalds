@@ -5,7 +5,7 @@ export function VideoBand() {
   const { t } = useTranslation();
 
   return (
-    <section className="border-t border-stone-200 bg-[#faf7f2] py-20 lg:py-28 text-stone-900">
+    <section className="border-t border-stone-200 bg-[#f5f4ed] py-20 lg:py-28 text-stone-900">
       <div className="container-custom">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 lg:items-end mb-10">
           <div className="lg:col-span-7">
