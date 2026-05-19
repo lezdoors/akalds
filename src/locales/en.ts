@@ -12,9 +12,14 @@ export default {
 
   hero: {
     badge: 'A UK holding company',
+    eyebrow: 'A UK holding company · Registered 19 May 2026',
     headline: 'Building durable digital businesses.',
+    headlineLine1: 'Building durable',
+    headlineLine2: 'digital businesses.',
     description:
       'Akal Digital Services is a London-based holding company operating brands across marketing, payments, and consumer ventures. We own the infrastructure our businesses run on — and the operators who run it.',
+    topRightStat: '8 operating brands across 4 European markets — built on one shared spine.',
+    ctaPrimary: 'Get in touch',
     primaryCta: 'What we do',
     secondaryCta: 'Get in touch',
   },
