@@ -3,11 +3,34 @@ import { ArrowUpRight } from 'lucide-react';
 import { useTranslation, useLanguage } from '@/contexts/LanguageContext';
 import { BlurFade } from '@/components/ui/blur-fade';
 
-const CAPABILITY_ITEMS = [
-  { key: 'marketing', path: '/marketing' },
-  { key: 'payments', path: '/payments' },
-  { key: 'ventures', path: '/ventures' },
-] as const;
+type CapabilityKey = 'marketing' | 'payments' | 'ventures';
+
+const CAPABILITY_ITEMS: {
+  key: CapabilityKey;
+  path: string;
+  // CSS gradient art placeholder — swap with /brand/capabilities/<key>.jpg
+  // once the Higgsfield hero renders land.
+  art: string;
+}[] = [
+  {
+    key: 'marketing',
+    path: '/marketing',
+    art:
+      'radial-gradient(120% 80% at 30% 40%, #6989ff 0%, #2541b2 45%, #0a1530 100%), linear-gradient(135deg, #2541b2, #0a1530)',
+  },
+  {
+    key: 'payments',
+    path: '/payments',
+    art:
+      'radial-gradient(120% 90% at 70% 30%, #5fd2e4 0%, #186b8a 50%, #0a1530 100%), linear-gradient(135deg, #186b8a, #0a1530)',
+  },
+  {
+    key: 'ventures',
+    path: '/ventures',
+    art:
+      'radial-gradient(130% 90% at 50% 70%, #ffb89a 0%, #b8568f 45%, #2a1b6b 100%), linear-gradient(135deg, #b8568f, #2a1b6b)',
+  },
+];
 
 export function Capabilities() {
   const { t } = useTranslation();
@@ -16,64 +39,58 @@ export function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="border-t border-stone-200 bg-[#f5f4ed] py-24 lg:py-32 text-stone-900"
+      className="bg-[#0a1530] py-24 lg:py-32 text-white"
     >
       <div className="container-custom">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <BlurFade delay={0} inView>
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
-                {t('capabilities.eyebrow')}
-              </p>
-            </BlurFade>
-            <BlurFade delay={0.1} inView>
-              <h2 className="text-headline">
-                {t('capabilities.title')}
-              </h2>
-            </BlurFade>
-            <BlurFade delay={0.2} inView>
-              <p className="mt-6 max-w-md text-stone-600 leading-relaxed">
-                {t('capabilities.description')}
-              </p>
-            </BlurFade>
-          </div>
+        {/* Header */}
+        <div className="mx-auto max-w-4xl text-center mb-16 lg:mb-20">
+          <BlurFade delay={0} inView>
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+              {t('capabilities.eyebrow')}
+            </p>
+          </BlurFade>
+          <BlurFade delay={0.1} inView>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.015em] leading-[1.1] text-white">
+              {t('capabilities.title')}
+            </h2>
+          </BlurFade>
+        </div>
 
-          <div className="lg:col-span-8">
-            <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white">
-              {CAPABILITY_ITEMS.map((item, idx) => {
-                const eyebrow = t(`capabilities.items.${item.key}.eyebrow`);
-                const title = t(`capabilities.items.${item.key}.title`);
-                const desc = t(`capabilities.items.${item.key}.shortDescription`);
-                const cta = t(`capabilities.items.${item.key}.ctaLabel`);
-                return (
-                  <BlurFade key={item.key} delay={0.1 + idx * 0.1} inView>
-                    <Link
-                      to={getLocalizedPath(item.path)}
-                      className="group grid grid-cols-[3rem_1fr] gap-x-6 border-b border-stone-200 p-7 last:border-b-0 transition-colors hover:bg-[#f5f4ed] md:grid-cols-[4rem_1fr] md:p-9"
-                    >
-                      <span className="font-mono text-xs text-stone-400 md:pt-2">
-                        {eyebrow}
-                      </span>
-                      <div>
-                        <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-title text-stone-900">
-                            {title}
-                          </h3>
-                          <ArrowUpRight className="mt-1 h-5 w-5 flex-shrink-0 text-stone-400 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-stone-900" />
-                        </div>
-                        <p className="mt-4 text-stone-600 md:text-[0.975rem] md:leading-relaxed">
-                          {desc}
-                        </p>
-                        <span className="mt-5 inline-flex items-center text-xs font-medium uppercase tracking-[0.16em] text-stone-500 group-hover:text-stone-900 transition-colors">
-                          {cta}
-                        </span>
-                      </div>
-                    </Link>
-                  </BlurFade>
-                );
-              })}
-            </div>
-          </div>
+        {/* Image-led cards */}
+        <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
+          {CAPABILITY_ITEMS.map((item, idx) => {
+            const title = t(`capabilities.items.${item.key}.title`);
+            const desc = t(`capabilities.items.${item.key}.shortDescription`);
+            return (
+              <BlurFade key={item.key} delay={0.15 + idx * 0.1} inView>
+                <Link
+                  to={getLocalizedPath(item.path)}
+                  className="group block"
+                >
+                  {/* Art tile */}
+                  <div
+                    className="aspect-[4/3] w-full rounded-md overflow-hidden mb-6 transition-transform duration-500 group-hover:scale-[1.02]"
+                    style={{ background: item.art }}
+                    aria-hidden="true"
+                  />
+                  {/* Title row */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-white">
+                      {title}
+                    </h3>
+                    <ArrowUpRight
+                      className="w-5 h-5 text-white transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      strokeWidth={2.2}
+                    />
+                  </div>
+                  {/* Body */}
+                  <p className="text-white/70 leading-relaxed text-[0.975rem]">
+                    {desc}
+                  </p>
+                </Link>
+              </BlurFade>
+            );
+          })}
         </div>
       </div>
     </section>
