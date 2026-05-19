@@ -39,7 +39,7 @@ export function Capabilities() {
   return (
     <section
       id="capabilities"
-      className="bg-[#0a1530] py-24 lg:py-32 text-white"
+      className="bg-black py-24 lg:py-32 text-white"
     >
       <div className="container-custom">
         {/* Header */}
