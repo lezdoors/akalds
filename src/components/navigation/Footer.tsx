@@ -48,10 +48,13 @@ export function Footer() {
               {t('footer.description')}
             </p>
 
-            {/* Address (legal requirement: a UK Ltd must publish its registered office) */}
-            <div className="flex items-start gap-2.5 text-white/40 text-sm mb-5">
+            {/* Address + company number (UK Companies (Trading Disclosures) Regulations 2008) */}
+            <div className="flex items-start gap-2.5 text-white/40 text-sm mb-1.5">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
               <span>71-75 Shelton Street, Covent Garden, London WC2H 9JQ</span>
+            </div>
+            <div className="text-white/35 text-xs mb-5 leading-relaxed pl-6">
+              Company No. 17229387 · Registered in England &amp; Wales
             </div>
 
             {/* Badges */}

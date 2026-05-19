@@ -22,7 +22,7 @@ const RGPD = () => {
             <ul>
               <li><strong>Consentement</strong> — lorsque vous remplissez notre formulaire de contact, vous consentez au traitement de vos données</li>
               <li><strong>Intérêt légitime</strong> — pour la fourniture de nos services et l'amélioration de notre offre</li>
-              <li><strong>Exécution d'un contrat</strong> — dans le cadre des services d'assurance et d'administration proposés</li>
+              <li><strong>Exécution d'un contrat</strong> — dans le cadre de la fourniture de nos services</li>
             </ul>
           </section>
 

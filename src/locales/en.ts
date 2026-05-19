@@ -18,7 +18,7 @@ export default {
     headlineLine2: 'digital businesses.',
     description:
       'Akal Digital Services is a London-based holding company operating brands across marketing, payments, and consumer ventures. We own the infrastructure our businesses run on — and the operators who run it.',
-    topRightStat: '8 operating brands across 4 European markets — built on one shared spine.',
+    topRightStat: 'A small portfolio of brands operated across Western Europe — built on one shared spine.',
     ctaPrimary: 'Get in touch',
     primaryCta: 'What we do',
     secondaryCta: 'Get in touch',
@@ -41,7 +41,7 @@ export default {
         eyebrow: '02',
         title: 'Payments',
         shortDescription:
-          'Merchant-of-record arrangements, Stripe Connect implementations, dispute resolution, treasury workflows. We operate the rails so our portfolio companies can focus on product.',
+          'Internal payments infrastructure for our portfolio — dedicated merchant accounts per brand, dispute hygiene, reconciliation, and treasury.',
         ctaLabel: 'Payments capabilities',
       },
       ventures: {
@@ -137,52 +137,55 @@ export default {
 
   paymentsPage: {
     eyebrow: 'Payments',
-    title: 'Payment infrastructure for operators.',
+    title: 'Payment operations for our portfolio.',
     intro:
-      'Payments are not a feature you bolt on. They are the foundation of how a digital business gets paid, refunds disputes, and survives chargebacks. We treat them accordingly.',
+      'Every brand we operate runs its payments on a centralised, audited Stripe infrastructure. We built this spine for our own needs — not as a service we sell to others.',
     capabilities: [
       {
-        title: 'Stripe Connect implementations',
-        body: 'Standard, Express, and Custom accounts; platform fees, payouts, and multi-party flows. Built to scale from one merchant to many.',
+        title: 'Dedicated merchant accounts',
+        body: 'Every brand operates under its own merchant account, with its own commercial identity and its own audit trail.',
       },
       {
-        title: 'Risk + dispute operations',
-        body: 'Radar tuning, evidence submission workflows, chargeback monitoring, and merchant-account hygiene to protect long-term acceptance rates.',
+        title: 'Dispute hygiene',
+        body: 'Internal workflows for evidence submission, chargeback monitoring, and protecting long-term acceptance rates across our brands.',
       },
       {
-        title: 'Merchant-of-record arrangements',
-        body: 'When our brands need to launch quickly under an established payment entity, Akal operates as the merchant of record with full compliance and reconciliation.',
+        title: 'Compliance + reconciliation',
+        body: 'Daily payout reconciliation, multi-currency handling for our European brands, downstream feeds into our accounting stack.',
       },
       {
-        title: 'Treasury + reconciliation',
-        body: 'Daily payout reconciliation, multi-currency handling, and downstream feeds into the accounting and tax stack.',
+        title: 'Card data security',
+        body: 'No card data is stored on our servers. All payments are handled directly by our PCI-DSS-certified payments provider.',
       },
     ],
     approach:
-      "We've operated payments through every stage — pre-revenue, growth-stage, and post-incident. The lessons learned are embedded in how we set up every new merchant we touch.",
+      'Payments are a support function for our holding company — not a product we sell.',
   },
 
   venturesPage: {
     eyebrow: 'Ventures',
     title: 'A small portfolio of operating brands.',
     intro:
-      "Akal operates and invests in a focused set of consumer and B2B brands. We don't run a fund or write checks — we build, buy, and operate.",
+      "Akal operates a focused set of consumer and B2B brands. We don't run a fund or write checks — we build and operate.",
     capabilities: [
       {
-        title: 'Consumer goods',
-        body: 'Atelier and lifestyle brands sourced through long-standing supplier relationships and operated with direct-to-consumer rigor.',
+        title: 'Maison Izem',
+        body: 'Luxury Moroccan artisan lifestyle brand — furniture, lighting, wall art. Launched 2026, online at maisonizem.com.',
+        href: 'https://www.maisonizem.com',
       },
       {
-        title: 'Energy services',
-        body: 'Lead-generation and customer acquisition for connection, installation, and infrastructure services across Western Europe.',
+        title: 'Maison Chapuis',
+        body: 'Ceramics, tagines, glassware, and Berber rugs for the US market. Online at maison-chapuis.com.',
+        href: 'https://maison-chapuis.com',
       },
       {
-        title: 'Digital products',
-        body: 'Internal tools, CRM, and operations software built for our portfolio — selectively released to outside operators when the fit is right.',
+        title: 'Service Raccordement',
+        body: 'Administrative assistance for Enedis electrical connection service in France. Online at service-raccordement.fr.',
+        href: 'https://service-raccordement.fr',
       },
       {
-        title: 'Selective bets',
-        body: "We take very few new bets. When we do, it's because the operator, category, and timing all line up.",
+        title: 'Latitude Marketing',
+        body: 'Marketing and conversion agency for the portfolio and selected clients.',
       },
     ],
     approach:
@@ -225,7 +228,7 @@ export default {
       operations: 'Operations',
       operationsAddress: 'contact@akalds.com',
       hours: 'Hours',
-      businessHours: 'Mon–Fri, business hours UK',
+      businessHours: 'Mon–Fri 09:00–18:00 GMT',
       address: 'Registered office',
       fullAddress: '71-75 Shelton Street\nCovent Garden\nLondon WC2H 9JQ\nUnited Kingdom',
     },
@@ -289,6 +292,6 @@ export default {
     defaultDescription:
       'A London-based holding company operating brands across marketing, payments, and consumer ventures.',
     keywords:
-      'Akal Digital Services, UK holding company, performance marketing, Stripe Connect, payments infrastructure, consumer ventures',
+      'Akal Digital Services, UK holding company, performance marketing, internal payments, brand portfolio, consumer goods',
   },
 };

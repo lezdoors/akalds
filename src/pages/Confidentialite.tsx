@@ -37,8 +37,9 @@ const Confidentialite = () => {
               Vos données peuvent être partagées avec les partenaires suivants, uniquement dans le cadre de la fourniture de nos services :
             </p>
             <ul>
-              <li><strong>Zenassur France</strong> — courtier en assurance, pour le traitement des demandes d'assurance</li>
-              <li><strong>Stripe</strong> — prestataire de paiement sécurisé, pour le traitement des transactions</li>
+              <li><strong>Stripe</strong> — prestataire de paiement sécurisé, pour le traitement des transactions sur nos marques opérationnelles</li>
+              <li><strong>Resend</strong> — prestataire d'envoi d'emails transactionnels</li>
+              <li><strong>Vercel</strong> — hébergeur du site</li>
             </ul>
             <p>
               Aucune donnée n'est vendue à des tiers à des fins commerciales.

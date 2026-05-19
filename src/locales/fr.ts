@@ -18,7 +18,7 @@ export default {
     headlineLine2: 'durables.',
     description:
       'Akal Digital Services est une holding basée à Londres qui opère des marques dans le marketing, les paiements et les biens de consommation. Nous possédons l\'infrastructure sur laquelle nos activités tournent — et les opérateurs qui les font tourner.',
-    topRightStat: '8 marques opérationnelles sur 4 marchés européens — bâties sur une seule colonne vertébrale partagée.',
+    topRightStat: 'Un petit portefeuille de marques opérées en Europe occidentale — bâties sur une seule colonne vertébrale partagée.',
     ctaPrimary: 'Nous contacter',
     primaryCta: 'Ce que nous faisons',
     secondaryCta: 'Nous contacter',
@@ -41,7 +41,7 @@ export default {
         eyebrow: '02',
         title: 'Paiements',
         shortDescription:
-          'Marchand de référence, intégrations Stripe Connect, gestion des litiges, opérations de trésorerie. Nous opérons les rails pour que nos marques se concentrent sur le produit.',
+          'Infrastructure de paiement interne pour notre portefeuille — comptes marchands dédiés par marque, hygiène des litiges, réconciliation et trésorerie.',
         ctaLabel: 'Voir les paiements',
       },
       ventures: {
@@ -137,52 +137,55 @@ export default {
 
   paymentsPage: {
     eyebrow: 'Paiements',
-    title: 'Infrastructure de paiement pour opérateurs.',
+    title: 'Opérations de paiement pour notre portefeuille.',
     intro:
-      'Les paiements ne sont pas une fonctionnalité qu\'on ajoute. Ils sont la fondation sur laquelle une activité numérique se fait payer, gère ses remboursements et survit aux chargebacks. Nous les traitons comme telle.',
+      'Chaque marque que nous opérons traite ses propres paiements sur une infrastructure Stripe centralisée et auditée. Nous avons construit cette colonne vertébrale pour nos propres besoins — pas comme un service vendu.',
     capabilities: [
       {
-        title: 'Intégrations Stripe Connect',
-        body: 'Comptes Standard, Express, Custom ; frais de plateforme, payouts, flux multi-parties. Conçus pour passer d\'un marchand à plusieurs.',
+        title: 'Comptes marchands dédiés',
+        body: 'Chaque marque opère sous son propre compte marchand, avec sa propre identité commerciale et sa propre piste d\'audit.',
       },
       {
-        title: 'Risque + gestion des litiges',
-        body: 'Réglage Radar, workflows de soumission de preuves, monitoring des chargebacks, hygiène du compte marchand pour protéger les taux d\'acceptation à long terme.',
+        title: 'Hygiène des litiges',
+        body: 'Workflows internes pour la soumission de preuves, le suivi des chargebacks, et le maintien des taux d\'acceptation à long terme sur nos marques.',
       },
       {
-        title: 'Marchand de référence',
-        body: 'Lorsque nos marques doivent se lancer rapidement sous une entité de paiement établie, Akal opère en tant que merchant of record avec conformité et réconciliation complètes.',
+        title: 'Conformité et réconciliation',
+        body: 'Réconciliation quotidienne des payouts, gestion multi-devises pour nos marques européennes, intégration descendante vers notre comptabilité.',
       },
       {
-        title: 'Trésorerie + réconciliation',
-        body: 'Réconciliation quotidienne des payouts, gestion multi-devises, et flux descendants vers la stack comptable et fiscale.',
+        title: 'Sécurité des données carte',
+        body: 'Aucune donnée carte n\'est stockée sur nos serveurs. Tous les paiements sont traités directement par notre prestataire de paiement certifié PCI-DSS.',
       },
     ],
     approach:
-      'Nous avons opéré des paiements à toutes les étapes — pré-revenu, croissance, et post-incident. Les leçons apprises sont intégrées dans la configuration de chaque nouveau marchand que nous lançons.',
+      'Les paiements sont une fonction support de notre activité de holding, pas un produit que nous vendons.',
   },
 
   venturesPage: {
     eyebrow: 'Marques',
     title: 'Un portefeuille restreint de marques opérationnelles.',
     intro:
-      'Akal opère et investit dans un ensemble ciblé de marques B2C et B2B. Nous ne gérons pas un fonds, nous ne signons pas de chèques — nous construisons, achetons et opérons.',
+      'Akal opère un ensemble ciblé de marques B2C et B2B. Nous ne gérons pas un fonds, nous ne signons pas de chèques — nous construisons et opérons.',
     capabilities: [
       {
-        title: 'Biens de consommation',
-        body: 'Marques d\'atelier et de lifestyle sourcées via des relations fournisseurs de long terme et opérées avec la rigueur du direct-to-consumer.',
+        title: 'Maison Izem',
+        body: 'Marque lifestyle d\'artisanat marocain de luxe — mobilier, luminaires, art mural. Lancée en 2026, en ligne sur maisonizem.com.',
+        href: 'https://www.maisonizem.com',
       },
       {
-        title: 'Services énergie',
-        body: 'Génération de leads et acquisition pour les services de raccordement, installation et infrastructure en Europe de l\'Ouest.',
+        title: 'Maison Chapuis',
+        body: 'Céramiques, tagines, verrerie et tapis berbères pour le marché US. En ligne sur maison-chapuis.com.',
+        href: 'https://maison-chapuis.com',
       },
       {
-        title: 'Produits numériques',
-        body: 'Outils internes, CRM, logiciels d\'opérations construits pour notre portefeuille — sélectivement ouverts à des opérateurs externes quand l\'adéquation est juste.',
+        title: 'Service Raccordement',
+        body: 'Service d\'assistance administrative au raccordement électrique Enedis en France. En ligne sur service-raccordement.fr.',
+        href: 'https://service-raccordement.fr',
       },
       {
-        title: 'Paris sélectifs',
-        body: 'Nous prenons très peu de nouveaux paris. Quand nous le faisons, c\'est que l\'opérateur, la catégorie et le timing s\'alignent tous.',
+        title: 'Latitude Marketing',
+        body: 'Agence de marketing et de conversion pour le portefeuille et clients sélectionnés.',
       },
     ],
     approach:
@@ -225,7 +228,7 @@ export default {
       operations: 'Opérations',
       operationsAddress: 'contact@akalds.com',
       hours: 'Horaires',
-      businessHours: 'Lun–Ven, horaires de bureau UK',
+      businessHours: 'Lun–Ven 09:00–18:00 GMT',
       address: 'Siège social',
       fullAddress: '71-75 Shelton Street\nCovent Garden\nLondres WC2H 9JQ\nRoyaume-Uni',
     },
@@ -289,6 +292,6 @@ export default {
     defaultDescription:
       'Holding basée à Londres opérant des marques dans le marketing, les paiements et les biens de consommation.',
     keywords:
-      'Akal Digital Services, holding UK, marketing à la performance, Stripe Connect, infrastructure paiements, marques',
+      'Akal Digital Services, holding UK, marketing à la performance, paiements internes, portefeuille de marques, biens de consommation',
   },
 };

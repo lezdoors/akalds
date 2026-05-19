@@ -4,7 +4,6 @@ import { ErrorBoundary } from '@/components/common/EnhancedErrorBoundary';
 import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
-import { ChatWidget } from '@/components/chat/ChatWidget';
 
 export function Layout() {
   return (
@@ -20,7 +19,6 @@ export function Layout() {
           </ErrorBoundary>
         </main>
         <Footer />
-        <ChatWidget />
       </div>
     </ErrorBoundary>
   );

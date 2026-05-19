@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { useTranslation, useLanguage } from '@/contexts/LanguageContext';
 import { BlurFade } from '@/components/ui/blur-fade';
 
 type CapabilityKey = 'marketingPage' | 'paymentsPage' | 'venturesPage';
 
-type Capability = { title: string; body: string };
+type Capability = { title: string; body: string; href?: string };
 
 export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
   const { t } = useTranslation();
@@ -59,21 +59,45 @@ export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
 
             <div className="lg:col-span-8">
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
-                {capabilities.map((c, i) => (
-                  <BlurFade key={i} delay={0.1 + i * 0.08} inView>
-                    <div className="grid grid-cols-[2.5rem_1fr] gap-x-5 border-b border-white/10 p-7 last:border-b-0 md:grid-cols-[3rem_1fr] md:p-9">
+                {capabilities.map((c, i) => {
+                  const inner = (
+                    <div className="grid grid-cols-[2.5rem_1fr] gap-x-5 border-b border-white/10 p-7 last:border-b-0 md:grid-cols-[3rem_1fr] md:p-9 group">
                       <span className="font-mono text-xs text-white/40 md:pt-1.5">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <div>
-                        <h3 className="text-title">{c.title}</h3>
+                        <div className="flex items-start justify-between gap-4">
+                          <h3 className="text-title">{c.title}</h3>
+                          {c.href && (
+                            <ArrowUpRight
+                              className="mt-1 h-5 w-5 flex-shrink-0 text-white/40 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
+                              aria-hidden="true"
+                            />
+                          )}
+                        </div>
                         <p className="mt-3 text-white/65 md:text-[0.975rem] md:leading-relaxed">
                           {c.body}
                         </p>
                       </div>
                     </div>
-                  </BlurFade>
-                ))}
+                  );
+                  return (
+                    <BlurFade key={i} delay={0.1 + i * 0.08} inView>
+                      {c.href ? (
+                        <a
+                          href={c.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block transition-colors hover:bg-white/[0.04]"
+                        >
+                          {inner}
+                        </a>
+                      ) : (
+                        inner
+                      )}
+                    </BlurFade>
+                  );
+                })}
               </div>
             </div>
           </div>
