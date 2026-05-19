@@ -3,7 +3,8 @@ import { BlurFade } from '@/components/ui/blur-fade';
 
 export function Approach() {
   const { t } = useTranslation();
-  const paragraphs = t('approach.paragraphs') as string[];
+  const raw = t('approach.paragraphs');
+  const paragraphs: string[] = Array.isArray(raw) ? raw : [];
 
   return (
     <section className="border-t border-stone-200 bg-[#f5f4ed] py-24 lg:py-32 text-stone-900">

@@ -15,7 +15,8 @@ export function CapabilityPage({ localeKey }: { localeKey: CapabilityKey }) {
   const eyebrow = t(`${localeKey}.eyebrow`);
   const title = t(`${localeKey}.title`);
   const intro = t(`${localeKey}.intro`);
-  const capabilities = t(`${localeKey}.capabilities`) as Capability[];
+  const rawCapabilities = t(`${localeKey}.capabilities`);
+  const capabilities: Capability[] = Array.isArray(rawCapabilities) ? rawCapabilities : [];
   const approach = t(`${localeKey}.approach`);
 
   return (

@@ -11,7 +11,8 @@ export default function About() {
   const { getLocalizedPath } = useLanguage();
   const navigate = useNavigate();
 
-  const sections = t('aboutPage.sections') as Section[];
+  const rawSections = t('aboutPage.sections');
+  const sections: Section[] = Array.isArray(rawSections) ? rawSections : [];
 
   return (
     <>
