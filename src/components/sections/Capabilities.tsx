@@ -5,30 +5,34 @@ import { BlurFade } from '@/components/ui/blur-fade';
 
 type CapabilityKey = 'marketing' | 'payments' | 'ventures';
 
-const CAPABILITY_ITEMS: {
+type Item = {
   key: CapabilityKey;
   path: string;
-  // CSS gradient art placeholder — swap with /brand/capabilities/<key>.jpg
-  // once the Higgsfield hero renders land.
-  art: string;
-}[] = [
+  art:
+    | { kind: 'image'; src: string }
+    // CSS gradient placeholder — swap with image once render lands.
+    | { kind: 'gradient'; bg: string };
+};
+
+const CAPABILITY_ITEMS: Item[] = [
   {
     key: 'marketing',
     path: '/marketing',
-    art:
-      'radial-gradient(120% 80% at 30% 40%, #6989ff 0%, #2541b2 45%, #0a1530 100%), linear-gradient(135deg, #2541b2, #0a1530)',
+    art: { kind: 'image', src: '/brand/capabilities/marketing.jpg' },
   },
   {
     key: 'payments',
     path: '/payments',
-    art:
-      'radial-gradient(120% 90% at 70% 30%, #5fd2e4 0%, #186b8a 50%, #0a1530 100%), linear-gradient(135deg, #186b8a, #0a1530)',
+    art: {
+      kind: 'gradient',
+      bg:
+        'radial-gradient(120% 90% at 70% 30%, #5fd2e4 0%, #186b8a 50%, #000 100%), linear-gradient(135deg, #186b8a, #000)',
+    },
   },
   {
     key: 'ventures',
     path: '/ventures',
-    art:
-      'radial-gradient(130% 90% at 50% 70%, #ffb89a 0%, #b8568f 45%, #2a1b6b 100%), linear-gradient(135deg, #b8568f, #2a1b6b)',
+    art: { kind: 'image', src: '/brand/capabilities/ventures.jpg' },
   },
 ];
 
@@ -67,12 +71,24 @@ export function Capabilities() {
                   to={getLocalizedPath(item.path)}
                   className="group block"
                 >
-                  {/* Art tile */}
-                  <div
-                    className="aspect-[4/3] w-full rounded-md overflow-hidden mb-6 transition-transform duration-500 group-hover:scale-[1.02]"
-                    style={{ background: item.art }}
-                    aria-hidden="true"
-                  />
+                  {/* Art tile (16:9 to match HF native output) */}
+                  {item.art.kind === 'image' ? (
+                    <img
+                      src={item.art.src}
+                      alt=""
+                      width={1600}
+                      height={900}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-video w-full object-cover bg-black mb-6 transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div
+                      className="aspect-video w-full mb-6 transition-transform duration-500 group-hover:scale-[1.02]"
+                      style={{ background: item.art.bg }}
+                      aria-hidden="true"
+                    />
+                  )}
                   {/* Title row */}
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-xl lg:text-2xl font-semibold text-white">
