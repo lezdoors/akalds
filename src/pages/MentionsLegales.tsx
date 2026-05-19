@@ -8,11 +8,17 @@ const MentionsLegales = () => {
             <h2>Éditeur du site</h2>
             <p>
               <strong>Akal Digital Services Ltd</strong><br />
-              Société enregistrée au Royaume-Uni<br />
-              71-75 Shelton Street, Covent Garden<br />
-              Londres, WC2H 9JQ, Royaume-Uni
+              Private limited company incorporée en Angleterre et au Pays de Galles<br />
+              Companies House n° 17229387 — constituée le 19 mai 2026<br />
+              Code SIC : 62090 (Other information technology service activities)
             </p>
             <p>
+              <strong>Siège social</strong><br />
+              71-75 Shelton Street, Covent Garden<br />
+              Londres WC2H 9JQ, Royaume-Uni
+            </p>
+            <p>
+              <strong>Directeur</strong> : M. Naoufal Haddaoui<br />
               Email : contact@akalds.com<br />
               Site web : www.akalds.com
             </p>
@@ -39,13 +45,6 @@ const MentionsLegales = () => {
             <h2>Responsabilité</h2>
             <p>
               Akal Digital Services Ltd s'efforce d'assurer l'exactitude des informations publiées sur ce site. Toutefois, la société ne saurait être tenue responsable des erreurs, omissions ou résultats obtenus suite à l'utilisation de ces informations.
-            </p>
-          </section>
-
-          <section>
-            <h2>Partenariat</h2>
-            <p>
-              Les services d'assurance sont proposés en partenariat avec <strong>Zenassur France</strong>, courtier en assurance inscrit à l'Orias. Akal Digital Services Ltd agit en qualité d'intermédiaire et n'est pas directement responsable des produits d'assurance souscrits.
             </p>
           </section>
 

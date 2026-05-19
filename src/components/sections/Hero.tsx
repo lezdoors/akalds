@@ -66,9 +66,9 @@ export function Hero() {
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-white/45 text-xs font-medium uppercase tracking-[0.18em]">
               <span>England &amp; Wales</span>
               <span aria-hidden className="text-white/20">·</span>
-              <span>Companies House</span>
+              <span>Companies House No&nbsp;17229387</span>
               <span aria-hidden className="text-white/20">·</span>
-              <span>Multi-brand operator</span>
+              <span>Covent Garden, London</span>
             </div>
           </div>
         </BlurFade>

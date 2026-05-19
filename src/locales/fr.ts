@@ -159,7 +159,7 @@ export default {
       {
         eyebrow: 'Juridiction',
         title: 'Enregistrée au Royaume-Uni.',
-        body: 'Akal Digital Services Ltd est enregistrée auprès de Companies House sous le droit anglais. Comptes annuels, bénéficiaires effectifs et déclarations fiscales sont tenus au Royaume-Uni. Nos activités opérationnelles servent des clients sur plusieurs marchés européens.',
+        body: 'Akal Digital Services Ltd est une société à responsabilité limitée (private limited company) constituée en Angleterre et au Pays de Galles le 19 mai 2026 — Companies House n° 17229387. Le siège social est situé au 71-75 Shelton Street, Covent Garden, Londres WC2H 9JQ. Comptes annuels, bénéficiaires effectifs et déclarations fiscales sont tenus au Royaume-Uni. Nos activités opérationnelles servent des clients sur plusieurs marchés européens.',
       },
     ],
   },
@@ -178,7 +178,7 @@ export default {
       hours: 'Horaires',
       businessHours: 'Lun–Ven, horaires de bureau UK',
       address: 'Siège social',
-      fullAddress: 'Londres, Royaume-Uni',
+      fullAddress: '71-75 Shelton Street\nCovent Garden\nLondres WC2H 9JQ\nRoyaume-Uni',
     },
     form: {
       title: 'Envoyez-nous un message',
@@ -225,7 +225,7 @@ export default {
       data: 'Données & RGPD',
     },
     copyright:
-      '© {{year}} Akal Digital Services Ltd. Société enregistrée en Angleterre et au Pays de Galles.',
+      '© {{year}} Akal Digital Services Ltd. Société enregistrée en Angleterre et au Pays de Galles, n° 17229387.',
   },
 
   chat: {
