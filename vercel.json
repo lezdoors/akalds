@@ -5,7 +5,15 @@
   "installCommand": "npm install",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/(marketing|payments|ventures|about|contact|mentions-legales|confidentialite|rgpd)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en/(marketing|payments|ventures|about|contact|mentions-legales|confidentialite|rgpd)",
       "destination": "/index.html"
     }
   ],

@@ -27,7 +27,7 @@ export function LanguageProvider({
   const [language, setLanguageState] = useState<Language>(
     () => languageFromPath(location.pathname) ?? defaultLanguage
   );
-  const [translationData, setTranslationData] = useState<Record<string, any>>({});
+  const [translationData, setTranslationData] = useState<Record<string, unknown>>({});
   const [isLoading, setIsLoading] = useState(true);
 
   // Keep language in sync with the URL (direct visits, back/forward, in-app links).
@@ -71,9 +71,9 @@ export function LanguageProvider({
   // Translation function with parameter support.
   // Returns string for string values, raw value (array/object) otherwise,
   // and the key as fallback when missing.
-  const t = (key: string, params?: Record<string, string | number>): any => {
+  const t = (key: string, params?: Record<string, string | number>): unknown => {
     const keys = key.split('.');
-    let value: any = translationData;
+    let value: unknown = translationData;
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
@@ -128,7 +128,9 @@ export function LanguageProvider({
   const contextValue: LanguageContextType = {
     language,
     setLanguage,
-    t,
+    // Runtime returns string | array | object depending on the locale entry;
+    // the interface's generic signature is the typed façade over that.
+    t: t as LanguageContextType['t'],
     getLocalizedPath,
     isLoading,
   };
@@ -155,19 +157,4 @@ export function useLanguage(): LanguageContextType {
 export function useTranslation() {
   const { t, language, isLoading } = useLanguage();
   return { t, language, isLoading };
-}
-
-// Hook for localized navigation (will be used in components that have Router context)
-export function useLocalizedNavigate() {
-  const { getLocalizedPath } = useLanguage();
-  
-  // Return a function that components can call with navigate hook
-  const getLocalizedNavigateFunction = (navigate: any) => {
-    return (path: string, options?: { replace?: boolean; state?: any }) => {
-      const localizedPath = getLocalizedPath(path);
-      navigate(localizedPath, options);
-    };
-  };
-
-  return { getLocalizedPath, getLocalizedNavigateFunction };
 }

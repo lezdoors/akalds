@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, memo } from 'react';
-import { Menu, Globe, Sun, Moon, Monitor, ChevronDown } from 'lucide-react';
+import { Menu, Globe, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
@@ -16,7 +16,6 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTheme } from '@/contexts/ThemeContext';
 import { cn } from '@/lib/utils';
 
 // Navigation items configuration
@@ -141,49 +140,6 @@ const LanguageSelector = memo(() => {
   );
 });
 
-// Theme selector component
-const ThemeSelector = memo(() => {
-  const { theme, setTheme } = useTheme();
-
-  const themeIcons = {
-    light: Sun,
-    dark: Moon,
-    system: Monitor,
-  };
-
-  const ThemeIcon = themeIcons[theme];
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="h-9 w-9 p-0 text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
-          aria-label="Toggle theme"
-        >
-          <ThemeIcon className="w-4 h-4" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-neutral-900/95 backdrop-blur-md border border-white/10">
-        <DropdownMenuItem onClick={() => setTheme('light')} className="cursor-pointer text-white/80 hover:text-white">
-          <Sun className="w-4 h-4 mr-2" />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')} className="cursor-pointer text-white/80 hover:text-white">
-          <Moon className="w-4 h-4 mr-2" />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')} className="cursor-pointer text-white/80 hover:text-white">
-          <Monitor className="w-4 h-4 mr-2" />
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-});
-
-// Services dropdown for desktop
 // Navigation link component
 const NavigationLink = memo(({
   item,
@@ -295,10 +251,6 @@ const MobileNavigation = memo(() => {
               <span className="text-sm font-medium text-white/40">Language</span>
               <LanguageSelector />
             </div>
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-white/40">Theme</span>
-              <ThemeSelector />
-            </div>
           </div>
         </nav>
       </SheetContent>
@@ -366,7 +318,6 @@ export const Header = memo(() => {
             {/* Desktop Controls */}
             <div className="hidden lg:flex items-center space-x-4">
               <LanguageSelector />
-              <ThemeSelector />
 
               {/* CTA Button */}
               <div>
