@@ -5,6 +5,6 @@ export const CTA_CONFIG = {
   },
   secondary: {
     text: 'common.learnMore',
-    path: '/services',
+    path: '/about',
   },
 } as const;

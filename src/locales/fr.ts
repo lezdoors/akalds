@@ -263,6 +263,7 @@ export default {
       submitting: 'Envoi…',
       success: 'Merci — nous reviendrons vers vous.',
       successDescription: 'Votre message nous est bien parvenu. Nous répondrons depuis hello@akalds.com.',
+      error: "Votre message n'a pas pu être envoyé. Réessayez, ou écrivez-nous directement à hello@akalds.com.",
       privacy: 'En envoyant, vous acceptez que nous stockions votre message et répondions depuis hello@akalds.com.',
     },
   },

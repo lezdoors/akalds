@@ -263,6 +263,7 @@ export default {
       submitting: 'Sending…',
       success: "Thanks — we'll be in touch.",
       successDescription: "Your message landed with us. We'll reply from hello@akalds.com.",
+      error: "Your message couldn't be sent. Please try again, or email us directly at hello@akalds.com.",
       privacy: 'By sending, you agree we can store your message and reply from hello@akalds.com.',
     },
   },

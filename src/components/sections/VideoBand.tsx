@@ -1,8 +1,29 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from '@/contexts/LanguageContext';
 import { BlurFade } from '@/components/ui/blur-fade';
 
 export function VideoBand() {
   const { t } = useTranslation();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Below the fold: don't fetch the video until the section approaches the
+  // viewport, then start playback.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="border-t border-stone-200 bg-[#f5f4ed] py-20 lg:py-28 text-stone-900">
@@ -29,13 +50,14 @@ export function VideoBand() {
 
         <BlurFade delay={0.25} inView>
           <video
+            ref={videoRef}
             className="block w-full h-auto"
             src="/media/akal-loop.mp4"
-            autoPlay
+            poster="/media/akal-loop-poster.jpg"
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-hidden="true"
           />
         </BlurFade>

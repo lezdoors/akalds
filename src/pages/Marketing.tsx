@@ -9,7 +9,6 @@ export default function Marketing() {
       <SEOHead
         title={`${t('marketingPage.title')} | Akal Digital Services`}
         description={t('marketingPage.intro')}
-        canonical="https://www.akalds.com/marketing"
       />
       <CapabilityPage localeKey="marketingPage" />
     </>

@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Home, Search, ArrowLeft, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { SEOHead } from '@/components/common/SEOHead';
 import { Link } from 'react-router-dom';
 
@@ -34,29 +33,6 @@ export default function NotFound() {
             </p>
           </motion.div>
 
-          {/* Search Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
-          >
-            <Card className="max-w-md mx-auto">
-              <CardContent className="p-4">
-                <div className="flex gap-2">
-                  <div className="relative flex-1">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                    <Input
-                      placeholder="Search for services, pages..."
-                      className="pl-10"
-                    />
-                  </div>
-                  <Button variant="outline">Search</Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
           {/* Navigation Options */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,11 +51,11 @@ export default function NotFound() {
             </Button>
 
             <Button asChild variant="outline" size="lg" className="h-auto p-6">
-              <Link to="/services" className="flex flex-col items-center gap-2">
+              <Link to="/about" className="flex flex-col items-center gap-2">
                 <Search className="w-6 h-6" />
                 <div>
-                  <div className="font-semibold">View Services</div>
-                  <div className="text-sm opacity-90">Explore our offerings</div>
+                  <div className="font-semibold">About us</div>
+                  <div className="text-sm opacity-90">What Akal operates</div>
                 </div>
               </Link>
             </Button>

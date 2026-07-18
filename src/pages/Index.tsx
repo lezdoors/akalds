@@ -15,7 +15,6 @@ const Index = () => {
       <SEOHead
         title={seo.title}
         description={seo.description}
-        canonical={seo.canonical}
         structuredData={seo.structuredData}
       />
       <main>

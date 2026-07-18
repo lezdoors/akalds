@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
 import { Toaster as Sonner } from '@/components/ui/sonner';
-import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { Layout } from '@/components/layout/Layout';
@@ -62,17 +61,15 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="system">
         <TooltipProvider>
-          <HelmetProvider>
-            <BrowserRouter>
-              <LanguageProvider defaultLanguage="fr">
-                <Suspense fallback={<div className="min-h-screen" />}>
-                  <AppRoutes />
-                </Suspense>
-                <Toaster />
-                <Sonner />
-              </LanguageProvider>
-            </BrowserRouter>
-          </HelmetProvider>
+          <BrowserRouter>
+            <LanguageProvider defaultLanguage="fr">
+              <Suspense fallback={<div className="min-h-screen" />}>
+                <AppRoutes />
+              </Suspense>
+              <Toaster />
+              <Sonner />
+            </LanguageProvider>
+          </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>

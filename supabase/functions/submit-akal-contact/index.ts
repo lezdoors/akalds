@@ -8,7 +8,7 @@
 //   SUPABASE_URL             — auto-injected by Supabase runtime
 //   SUPABASE_SERVICE_ROLE_KEY — auto-injected by Supabase runtime
 //   RESEND_API_KEY           — optional; if unset, skips email step
-//   RESEND_FROM              — e.g. "Akal Digital Services <leads@raccordement-connect.com>"
+//   RESEND_FROM              — required for email; must be an Akal-owned sender domain
 //   NOTIFY_TO                — e.g. "ryanaoufal@gmail.com"
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
@@ -16,14 +16,28 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
-const RESEND_FROM = Deno.env.get('RESEND_FROM') ?? 'Akal Digital Services <leads@raccordement-connect.com>';
+// No fallback sender: an unset RESEND_FROM must skip email loudly rather than
+// send from a non-Akal domain.
+const RESEND_FROM = Deno.env.get('RESEND_FROM');
 const NOTIFY_TO = Deno.env.get('NOTIFY_TO') ?? 'ryanaoufal@gmail.com';
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+const ALLOWED_ORIGINS = new Set([
+  'https://www.akalds.com',
+  'https://akalds.com',
+  'http://localhost:8080',
+]);
+
+// Max contact submissions per IP per hour.
+const RATE_LIMIT = 5;
+
+function corsHeaders(origin: string | null) {
+  return {
+    'Access-Control-Allow-Origin': origin && ALLOWED_ORIGINS.has(origin) ? origin : 'https://www.akalds.com',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+    'Vary': 'Origin',
+  };
+}
 
 type ContactPayload = {
   firstName?: string;
@@ -32,6 +46,7 @@ type ContactPayload = {
   phone?: string | null;
   service?: string;
   message?: string;
+  company?: string; // honeypot — must be empty
 };
 
 function isEmail(s: string): boolean {
@@ -58,6 +73,10 @@ function validate(input: ContactPayload): { ok: true; data: Required<Omit<Contac
 
 async function sendNotification(record: { id: string; firstName: string; lastName: string; email: string; phone: string | null; service: string; message: string; }) {
   if (!RESEND_API_KEY) return { skipped: true as const };
+  if (!RESEND_FROM) {
+    console.error('RESEND_FROM not configured — refusing to send from a default sender. Set it via supabase secrets.');
+    return { skipped: true as const };
+  }
 
   const subject = `[akalds.com] New contact: ${record.firstName} ${record.lastName} — ${record.service}`;
   const text = [
@@ -99,6 +118,8 @@ async function sendNotification(record: { id: string; firstName: string; lastNam
 }
 
 Deno.serve(async (req) => {
+  const CORS_HEADERS = corsHeaders(req.headers.get('origin'));
+
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: CORS_HEADERS });
   }
@@ -119,6 +140,14 @@ Deno.serve(async (req) => {
     });
   }
 
+  // Honeypot: pretend success so bots don't adapt, persist nothing.
+  if (body.company && body.company.trim() !== '') {
+    return new Response(JSON.stringify({ ok: true, id: crypto.randomUUID(), notified: false }), {
+      status: 200,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
   const v = validate(body);
   if (!v.ok) {
     return new Response(JSON.stringify({ error: v.error }), {
@@ -134,6 +163,24 @@ Deno.serve(async (req) => {
 
   const userAgent = req.headers.get('user-agent');
   const ipAddress = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? null;
+
+  // Rate limit: cap submissions per IP per hour. Fail open on query errors —
+  // a broken counter must not take the contact form down.
+  if (ipAddress) {
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const { count, error: countError } = await supabase
+      .from('akal_contacts')
+      .select('id', { count: 'exact', head: true })
+      .eq('ip_address', ipAddress)
+      .gte('created_at', oneHourAgo);
+
+    if (!countError && (count ?? 0) >= RATE_LIMIT) {
+      return new Response(JSON.stringify({ error: 'too many requests' }), {
+        status: 429,
+        headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      });
+    }
+  }
 
   const { data, error } = await supabase
     .from('akal_contacts')

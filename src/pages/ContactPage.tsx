@@ -28,6 +28,8 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   service: z.string().min(1),
   message: z.string().min(10),
+  // Honeypot — humans never see or fill this field.
+  company: z.string().optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -52,6 +54,7 @@ export default function ContactPage() {
   const { t } = useTranslation();
   const seoConfig = getPageSEO('contact');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -72,6 +75,7 @@ export default function ContactPage() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    setSubmitError(false);
     try {
       const res = await fetch(SUBMIT_ENDPOINT, {
         method: 'POST',
@@ -87,6 +91,7 @@ export default function ContactPage() {
           phone: data.phone || null,
           service: data.service,
           message: data.message,
+          company: data.company || '',
         }),
       });
       if (!res.ok) {
@@ -97,6 +102,7 @@ export default function ContactPage() {
       reset();
     } catch (err) {
       console.error('Contact form error:', err);
+      setSubmitError(true);
     }
   };
 
@@ -105,7 +111,6 @@ export default function ContactPage() {
       <SEOHead
         title={seoConfig.title}
         description={seoConfig.description}
-        canonical={seoConfig.canonical}
         structuredData={seoConfig.structuredData}
       />
 
@@ -238,6 +243,18 @@ export default function ContactPage() {
                         />
                       </div>
 
+                      {/* Honeypot — hidden from humans, bots fill it */}
+                      <div className="absolute -left-[9999px] top-auto" aria-hidden="true">
+                        <label htmlFor="company">Company</label>
+                        <input
+                          id="company"
+                          type="text"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          {...register('company')}
+                        />
+                      </div>
+
                       {/* Submit */}
                       <Button
                         type="submit"
@@ -247,6 +264,12 @@ export default function ContactPage() {
                       >
                         {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
                       </Button>
+
+                      {submitError && (
+                        <p role="alert" className="text-sm text-red-400 text-center">
+                          {t('contact.form.error')}
+                        </p>
+                      )}
 
                       {/* Privacy */}
                       <p className="text-xs text-white/40 text-center">

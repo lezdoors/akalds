@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Language, LanguageContextType } from '@/types';
 
 // Translation files
@@ -18,9 +19,26 @@ export function LanguageProvider({
   children, 
   defaultLanguage = 'en' 
 }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>(defaultLanguage);
+  const location = useLocation();
+  // The URL is the source of truth: /en/* is English, everything else French.
+  const languageFromPath = (pathname: string): Language =>
+    pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'fr';
+
+  const [language, setLanguageState] = useState<Language>(
+    () => languageFromPath(location.pathname) ?? defaultLanguage
+  );
   const [translationData, setTranslationData] = useState<Record<string, any>>({});
   const [isLoading, setIsLoading] = useState(true);
+
+  // Keep language in sync with the URL (direct visits, back/forward, in-app links).
+  useEffect(() => {
+    setLanguageState(languageFromPath(location.pathname));
+  }, [location.pathname]);
+
+  // Keep <html lang> accurate for SEO and assistive tech.
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   // Load translation data with error handling
   const loadTranslations = async (lang: Language) => {
@@ -94,9 +112,9 @@ export function LanguageProvider({
   const getLocalizedPath = (path: string): string => {
     // Remove leading slash for consistency
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-    
+
     if (language === 'en') {
-      return `/en/${cleanPath}`;
+      return cleanPath ? `/en/${cleanPath}` : '/en';
     }
     return `/${cleanPath}`;
   };

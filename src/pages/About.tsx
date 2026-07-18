@@ -19,7 +19,6 @@ export default function About() {
       <SEOHead
         title={`${t('aboutPage.title')} | Akal Digital Services`}
         description={t('aboutPage.intro')}
-        canonical="https://www.akalds.com/about"
       />
 
       <main className="bg-black text-white">

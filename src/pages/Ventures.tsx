@@ -9,7 +9,6 @@ export default function Ventures() {
       <SEOHead
         title={`${t('venturesPage.title')} | Akal Digital Services`}
         description={t('venturesPage.intro')}
-        canonical="https://www.akalds.com/ventures"
       />
       <CapabilityPage localeKey="venturesPage" />
     </>

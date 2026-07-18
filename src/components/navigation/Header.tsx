@@ -67,10 +67,11 @@ function useActiveLink() {
 
   const isActiveLink = useCallback((path: string) => {
     const currentPath = location.pathname;
-    const expectedPath = language === 'fr' ? `/fr/${path}` : `/${path}`;
+    // French lives at the root, English under /en.
+    const expectedPath = language === 'en' ? `/en/${path}` : `/${path}`;
 
     if (path === '' || path === 'home') {
-      return currentPath === '/' || currentPath === '/fr';
+      return currentPath === '/' || currentPath === '/en';
     }
 
     return currentPath === expectedPath || currentPath.startsWith(expectedPath + '/');
@@ -88,15 +89,14 @@ const LanguageSelector = memo(() => {
   const handleLanguageChange = (newLanguage: 'en' | 'fr') => {
     if (newLanguage === language) return;
 
+    // French lives at the root, English under /en.
     const currentPath = location.pathname;
     let newPath: string;
 
-    if (language === 'en' && newLanguage === 'fr') {
-      newPath = `/fr${currentPath}`;
-    } else if (language === 'fr' && newLanguage === 'en') {
-      newPath = currentPath.replace(/^\/fr/, '') || '/';
+    if (newLanguage === 'fr') {
+      newPath = currentPath.replace(/^\/en(?=\/|$)/, '') || '/';
     } else {
-      return;
+      newPath = currentPath === '/' ? '/en' : `/en${currentPath}`;
     }
 
     setLanguage(newLanguage);
@@ -313,7 +313,7 @@ export const Header = memo(() => {
   const { language, t, getLocalizedPath } = useLanguage();
   const navigate = useNavigate();
 
-  const homePath = language === 'fr' ? '/fr' : '/';
+  const homePath = language === 'en' ? '/en' : '/';
 
   return (
     <>

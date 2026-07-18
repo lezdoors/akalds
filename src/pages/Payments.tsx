@@ -9,7 +9,6 @@ export default function Payments() {
       <SEOHead
         title={`${t('paymentsPage.title')} | Akal Digital Services`}
         description={t('paymentsPage.intro')}
-        canonical="https://www.akalds.com/payments"
       />
       <CapabilityPage localeKey="paymentsPage" />
     </>

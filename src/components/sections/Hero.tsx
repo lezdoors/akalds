@@ -15,6 +15,7 @@ export function Hero() {
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/media/akal-hero.mp4"
+        poster="/media/akal-hero-poster.jpg"
         autoPlay
         muted
         loop
